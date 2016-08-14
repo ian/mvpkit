@@ -1,0 +1,28 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "= Mvp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian/mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian/mvp/issues"
+  },
+  "homepage": "https://github.com/ian/mvp#readme",
+  "dependencies": {
+    "browserify": "~>13.1.0",
+    "browserify-incremental": ">0",
+    "is": "^3.1.0",
+    "jquery.cookie": "^1.4.1",
+    "lodash": "^4.14.1"
+  }
+}
