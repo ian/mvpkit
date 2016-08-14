@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import "font-awesome-sprockets";
 @import "font-awesome";
 
 html,
@@ -18,7 +19,7 @@ div.muted {
 }
 
 .navbar-transparent {
-  @extend .navbar-default;
+  // @extend .navbar-default;
   background-color: transparent;
   border-color: transparent;
 }

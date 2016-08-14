@@ -1,5 +1,3 @@
-require 'hashie'
-
 module Mvp
   module SEOConcern
     extend ActiveSupport::Concern
