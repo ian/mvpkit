@@ -43,7 +43,7 @@ var _rollbarConfig = {
     analytics.identify('<%= analytics_id %>');
     <% end %>
     analytics.page('<%= controller.controller_path %>.<%= controller.action_name %>', {
-      iteration: "<%= Iteration.version %>"
+      iteration: "<%= Mvp::Iteration.version %>"
     });
     }}();
     </script>

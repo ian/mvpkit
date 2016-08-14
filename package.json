@@ -1,7 +1,8 @@
 {
   "name": "mvp",
+  "private": true,
   "version": "1.0.0",
-  "description": "= Mvp",
+  "description": "= MVP",
   "main": "index.js",
   "directories": {
     "test": "test"
