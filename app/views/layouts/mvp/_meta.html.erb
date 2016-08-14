@@ -1,0 +1,37 @@
+<meta charset=utf-8>
+<meta content="IE=edge" http-equiv=X-UA-Compatible>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<% if page.description %>
+<meta content="<%= page.description %>" name="description">
+<% end %>
+<% if page.author %>
+<meta content="<%= page.author %>" name="author">
+<% end %>
+<title><%= page.title %></title>
+
+<% if page.canonical_url %>
+<link rel="canonical" href="<%= page.canonical_url %>" />
+<% end %>
+
+<% if page.noindex %>
+<meta name="robots" content="noindex">
+<% end %>
+
+<% if page.og_url %>
+<meta property="og:url" content="<%= page.og_url %>" />
+<% end %>
+<% if page.og_type %>
+<meta property="og:type" content="<%= page.og_type %>" />
+<% end %>
+<% if page.og_title || page.title %>
+<meta property="og:title" content="<%= page.og_title || page.title %>" />
+<% end %>
+<% if page.og_description || page.description %>
+<meta property="og:description" content="<%= page.og_description || page.description %>" />
+<% end %>
+<% if page.og_image %>
+<meta property="og:image" content="<%= page.og_image %>" />
+<% end %>
+<% if page.twitter_card %>
+<meta name="twitter:card" content="<%= page.twitter_card %>" />
+<% end %>

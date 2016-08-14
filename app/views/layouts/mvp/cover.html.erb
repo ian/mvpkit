@@ -1,0 +1,13 @@
+<% page.classes = "body-cover" %>
+
+<%- content_for :body do %>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= render template: "layouts/mvp/application" %>

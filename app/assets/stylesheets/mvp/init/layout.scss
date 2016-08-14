@@ -1,0 +1,41 @@
+@import 'bootstrap';
+@import "font-awesome";
+
+html,
+body {
+  height: 100%;
+}
+
+.modal {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+div.muted {
+  opacity: 0.5;
+}
+
+.navbar-transparent {
+  @extend .navbar-default;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  @for $i from 1 through 99 {
+    &.white-#{$i} {
+      background-color: #FFF;
+      opacity: $i / 100;
+    }
+    &.black-#{$i} {
+      background-color: #000;
+      opacity: $i / 100;
+    }
+  }
+}

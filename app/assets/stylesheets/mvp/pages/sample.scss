@@ -1,0 +1,14 @@
+.home-pages {
+  .topic {
+    position:relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
