@@ -13,6 +13,5 @@ module Mvp
   class Engine < ::Rails::Engine
     isolate_namespace Mvp
     config.autoload_paths << "#{Rails.root}/lib"
-    # config.browserify_rails.paths << -> (p) { p.start_with?(Engine.root.join("app").to_s) }
   end
 end
