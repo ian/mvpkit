@@ -10,7 +10,7 @@ module Mvp
     end
 
     def track!(event, properties={})
-      return if session[INVISIBLE_SESSION_COOKIE] == "true"
+      return if session[INVISIBLE_SESSION_COOKIE].to_b == true
       return unless analytics
       analytics.track({
         user_id: analytics_id,
@@ -34,7 +34,7 @@ module Mvp
     end
 
     def page!(name, opts={})
-      return if sessions[INVISIBLE_SESSION_COOKIE] == "true"
+      return if sessions[INVISIBLE_SESSION_COOKIE].to_b == true
       return unless analytics
       analytics.page(
         user_id: current_user.try(:id),

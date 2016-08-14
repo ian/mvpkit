@@ -14,7 +14,7 @@ var _rollbarConfig = {
 </script>
 <% end %>
 
-<% unless cookies[Mvp::AnalyticsConcern::INVISIBLE_SESSION_COOKIE] == "true" %>
+<% unless cookies[Mvp::AnalyticsConcern::INVISIBLE_SESSION_COOKIE].to_b == true %>
   <% if ENV['FACEBOOK_TRACKING_ID'] %>
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
