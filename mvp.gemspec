@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave'
   s.add_dependency 'client_side_validations'
   s.add_dependency 'client_side_validations-simple_form'
-  s.add_dependency 'coffee-rails', '~> 4.1.0'
   s.add_dependency 'faraday'
   s.add_dependency 'font-awesome-sass'
   s.add_dependency "carrierwave"
