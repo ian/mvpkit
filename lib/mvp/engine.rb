@@ -9,6 +9,7 @@ require 'hashie'
 require 'jquery-rails'
 require "simple_form"
 
+require_relative './ext/nil'
 require_relative './ext/string'
 
 module Mvp
