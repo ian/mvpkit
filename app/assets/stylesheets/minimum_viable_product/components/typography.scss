@@ -30,6 +30,10 @@
 .text-normal { font-weight: 400; }
 .text-bold { font-weight: 700; }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 @for $i from 1 through 99 {
   .text-sm-#{$i} {
     font-size: #{$i/100}em;
