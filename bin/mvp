@@ -41,7 +41,8 @@ when 'new'
   run "cd #{slug}; bin/setup", "\n== Project Setup"
 
 when 'update'
-  puts "TBD"
+  run "bundle update minimum_viable_product"
+  run "npm update minimum_viable_product"
 end
 
 BEGIN {
