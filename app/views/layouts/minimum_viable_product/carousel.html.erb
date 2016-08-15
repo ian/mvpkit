@@ -1,9 +1,13 @@
 <% page.classes = "body-carousel" %>
 
 <%- content_for :body do %>
-<div class="container">
-  <%= render 'layouts/minimum_viable_product/header' %>
-</div>
+<% if content_for :header %>
+  <%= yield :header %>
+<% else %>
+  <div class="container">
+    <%= render 'layouts/minimum_viable_product/header' %>
+  </div>
+<% end %>
 <%= yield :carousel %>
 <div class="container">
   <%= yield %>

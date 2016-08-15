@@ -1,8 +1,14 @@
 <% page.classes = "body-basic" %>
 
 <%- content_for :body do %>
+<% if content_for :header %>
+  <%= yield :header %>
+<% else %>
+  <div class="container">
+    <%= render 'layouts/minimum_viable_product/header' %>
+  </div>
+<% end %>
 <div class="container">
-  <%= render 'layouts/minimum_viable_product/header' %>
   <%= yield %>
 </div>
 <% end %>
