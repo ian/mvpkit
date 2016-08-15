@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   # s.files = Dir["engine/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
-  s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.executables = ['mvp'] 
 
   s.add_dependency 'analytics-ruby'
   s.add_dependency 'bootstrap-sass'
