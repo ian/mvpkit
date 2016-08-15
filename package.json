@@ -1,5 +1,5 @@
 {
-  "name": "minimum-viable-product",
+  "name": "minimum_viable_product",
   "private": true,
   "version": "1.0.0",
   "description": "= MVP",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ian/minimum-viable-product.git"
+    "url": "git+https://github.com/ian/minimum_viable_product.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ian/minimum-viable-product/issues"
+    "url": "https://github.com/ian/minimum_viable_product/issues"
   },
-  "homepage": "https://github.com/ian/minimum-viable-product#readme",
+  "homepage": "https://github.com/ian/minimum_viable_product#readme",
   "dependencies": {
     "browserify": "~>13.1.0",
     "browserify-incremental": ">0",

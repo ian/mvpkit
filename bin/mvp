@@ -24,7 +24,7 @@ when 'new'
 
   puts
   puts "\n== Cloning Base Project =="
-  run "git clone git@github.com:ian/mvp-rails.git #{slug}"
+  run "git clone git@github.com:ian/mvp_rails.git #{slug}"
 
   puts
   puts "\n== Initializing Project =="

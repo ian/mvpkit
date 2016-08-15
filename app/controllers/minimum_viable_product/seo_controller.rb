@@ -1,4 +1,4 @@
-require_dependency "minimum-viable-product/controller"
+require_dependency "minimum_viable_product/controller"
 
 module MinimumViableProduct
   class SeoController < Controller

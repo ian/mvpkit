@@ -1,4 +1,4 @@
-require "minimum-viable-product/engine"
+require "minimum_viable_product/engine"
 
 module MinimumViableProduct
 end

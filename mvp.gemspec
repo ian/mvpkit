@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "minimum-viable-product/version"
+require "minimum_viable_product/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "minimum-viable-product"
+  s.name        = "minimum_viable_product"
   s.version     = MinimumViableProduct::VERSION
   s.authors     = ["Ian Hunter"]
   s.email       = ["ianhunter@gmail.com"]
-  s.homepage    = "http://github.com/ian/minimum-viable-product"
+  s.homepage    = "http://github.com/ian/minimum_viable_product"
   s.summary     = "The start-to-finish 3 minute product platform"
   s.description = "Built for Developers. Ideal for MVPs, product ideation and validation."
   s.license     = "MIT"

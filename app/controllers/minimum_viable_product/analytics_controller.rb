@@ -1,7 +1,7 @@
-require_dependency "minimum-viable-product/controller"
+require_dependency "minimum_viable_product/controller"
 
 module MinimumViableProduct
-  class AnalyticsController < ApplicationController
+  class AnalyticsController < Controller
     def optout
       cookies[AnalyticsConcern::INVISIBLE_SESSION_COOKIE] = {
         :value   => true,

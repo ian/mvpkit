@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minimum-viable-product (0.0.5)
+    minimum_viable_product (0.0.7)
       analytics-ruby
       bootstrap-sass
       browserify-rails
@@ -376,7 +376,7 @@ DEPENDENCIES
   binding_of_caller
   bullet
   byebug
-  minimum-viable-product!
+  minimum_viable_product!
   semantic
   spring
   web-console (~> 2.0)
