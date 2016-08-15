@@ -1,4 +1,4 @@
-module Mvp
+module MinimumViableProduct
   module SessionConcern
     extend ActiveSupport::Concern
 

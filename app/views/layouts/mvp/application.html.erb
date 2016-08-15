@@ -14,7 +14,7 @@
 
   <%= render 'layouts/mvp/instrumentation' %>
 </head>
-<body id="<%= body_id %>" class="<%= body_classes %>" data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>" data-iteration="<%= Mvp::Iteration.version %>">
+<body id="<%= body_id %>" class="<%= body_classes %>" data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>" data-iteration="<%= MVP::Iteration.version %>">
   <% if content_for? :body %>
     <%= yield :body %>
   <% else %>

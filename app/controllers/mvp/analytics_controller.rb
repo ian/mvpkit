@@ -1,6 +1,6 @@
 require_dependency "mvp/application_controller"
 
-module Mvp
+module MinimumViableProduct
   class AnalyticsController < ApplicationController
     def optout
       cookies[AnalyticsConcern::INVISIBLE_SESSION_COOKIE] = {

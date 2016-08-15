@@ -12,9 +12,9 @@ require "simple_form"
 require_relative './ext/nil'
 require_relative './ext/string'
 
-module Mvp
+module MinimumViableProduct
   class Engine < ::Rails::Engine
-    isolate_namespace Mvp
+    isolate_namespace MinimumViableProduct
     config.autoload_paths << "#{Rails.root}/lib"
   end
 end

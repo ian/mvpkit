@@ -1,4 +1,4 @@
-Mvp::Engine.routes.draw do
+MinimumViableProduct::Engine.routes.draw do
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   if Rails.env.development?

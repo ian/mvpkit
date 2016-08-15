@@ -1,6 +1,6 @@
 require_dependency "mvp/application_controller"
 
-module Mvp
+module MinimumViableProduct
   class SeoController < ApplicationController
     def robots
       render text: %%

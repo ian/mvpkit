@@ -1,4 +1,4 @@
-module Mvp
+module MinimumViableProduct
   module StyleguideHelper
   end
 end

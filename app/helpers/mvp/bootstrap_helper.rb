@@ -1,4 +1,4 @@
-module Mvp
+module MinimumViableProduct
   module BootstrapHelper
     def col_groups_of(count, collection, opts={})
       return if collection.blank?

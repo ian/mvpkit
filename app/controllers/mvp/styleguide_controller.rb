@@ -1,6 +1,6 @@
 require_dependency "mvp/application_controller"
 
-module Mvp
+module MinimumViableProduct
   class StyleguideController < ApplicationController
     def layout_basic
       render template: 'styleguide/layouts/basic', layout: 'basic'

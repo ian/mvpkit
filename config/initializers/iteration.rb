@@ -1,4 +1,4 @@
-module Mvp
+module MinimumViableProduct
   module Iteration
     CONFIG_FILE = File.join(Rails.root, '.iteration')
 

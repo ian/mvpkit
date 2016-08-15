@@ -1,4 +1,4 @@
-module Mvp
+module MinimumViableProduct
   module AnalyticsConcern
     extend ActiveSupport::Concern
 
@@ -16,7 +16,7 @@ module Mvp
         user_id: analytics_id,
         event: event,
         properties: properties.reverse_merge({
-          iteration: Mvp::Iteration.version,
+          iteration: MVP::Iteration.version,
           user: current_user.try(:name),
           url: request.fullpath
         })
@@ -42,7 +42,7 @@ module Mvp
         category: opts[:category],
         properties: {
           url: opts[:url],
-          iteration: Mvp::Iteration.version
+          iteration: MVP::Iteration.version
         }
       )
     end
