@@ -8,6 +8,7 @@ require 'geocoder'
 require 'hashie'
 require 'jquery-rails'
 require "simple_form"
+require 'segment'
 
 require_relative './ext/nil'
 require_relative './ext/string'
