@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minimum_viable_product (0.0.7)
+    minimum_viable_product (0.0.10)
       analytics-ruby
       bootstrap-sass
       browserify-rails
@@ -285,6 +285,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-canonical-host (0.2.2)
@@ -377,6 +378,7 @@ DEPENDENCIES
   bullet
   byebug
   minimum_viable_product!
+  pg
   semantic
   spring
   web-console (~> 2.0)
