@@ -7,6 +7,7 @@ require 'font-awesome-sass'
 require 'geocoder'
 require 'hashie'
 require 'jquery-rails'
+require 'rollbar'
 require "simple_form"
 require 'segment'
 
