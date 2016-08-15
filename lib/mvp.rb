@@ -1,6 +1,6 @@
-require "mvp/engine"
+require "minimum-viable-product/engine"
 
-module Mvp
+module MinimumViableProduct
 end
 
-MVP = Mvp
+MVP = Mvp = MinimumViableProduct
