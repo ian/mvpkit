@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = MinimumViableProduct::VERSION
   s.authors     = ["Ian Hunter"]
   s.email       = ["ianhunter@gmail.com"]
-  s.homepage    = "http://github.com/ian/mvp"
+  s.homepage    = "http://github.com/ian/minimum-viable-product"
   s.summary     = "The start-to-finish 3 minute product platform"
   s.description = "Built for Developers. Ideal for MVPs, product ideation and validation."
   s.license     = "MIT"

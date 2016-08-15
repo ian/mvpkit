@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang='en'>
 <head>
-  <%= render('layouts/mvp/meta').gsub(/\n/,'').html_safe %>
+  <%= render('layouts/minimum-viable-product/meta').gsub(/\n/,'').html_safe %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab|Pacifico' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <%= render 'layouts/mvp/instrumentation' %>
+  <%= render 'layouts/minimum-viable-product/instrumentation' %>
 </head>
 <body id="<%= body_id %>" class="<%= body_classes %>" data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>" data-iteration="<%= MVP::Iteration.version %>">
   <% if content_for? :body %>

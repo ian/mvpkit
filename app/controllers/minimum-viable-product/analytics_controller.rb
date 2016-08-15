@@ -1,4 +1,4 @@
-require_dependency "mvp/application_controller"
+require_dependency "minimum-viable-product/controller"
 
 module MinimumViableProduct
   class AnalyticsController < ApplicationController
