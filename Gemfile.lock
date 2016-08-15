@@ -1,11 +1,30 @@
 PATH
   remote: .
   specs:
-    mvp (0.0.2)
-
-GEM
-  remote: https://api.rubygems.org/
-  specs:
+    minimum-viable-product (0.0.5)
+      analytics-ruby
+      bootstrap-sass
+      browserify-rails
+      carrierwave
+      client_side_validations
+      client_side_validations-simple_form
+      cloudinary
+      dotenv-rails
+      faraday
+      fog
+      fog-aws
+      font-awesome-sass
+      geocoder
+      hashie
+      jquery-rails
+      rack-canonical-host
+      rack-ssl-enforcer
+      rails (~> 4.2.3)
+      rollbar
+      sass-rails (~> 5.0)
+      simple_form
+      sitemap_generator
+      slack-notifier
 
 GEM
   remote: https://rubygems.org/
@@ -353,34 +372,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  analytics-ruby
   better_errors
   binding_of_caller
-  bootstrap-sass
-  browserify-rails
   bullet
   byebug
-  carrierwave
-  client_side_validations
-  client_side_validations-simple_form
-  cloudinary
-  dotenv-rails
-  faraday
-  fog
-  fog-aws
-  font-awesome-sass
-  geocoder
-  hashie
-  jquery-rails
-  mvp!
-  rack-canonical-host
-  rack-ssl-enforcer
-  rails (~> 4.2)
-  rollbar
-  sass-rails (~> 5.0)
+  minimum-viable-product!
   semantic
-  simple_form
-  sitemap_generator
-  slack-notifier
   spring
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.12.5
