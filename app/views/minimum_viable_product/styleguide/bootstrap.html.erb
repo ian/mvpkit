@@ -1,0 +1,43 @@
+<div class="container">
+  <%= render 'styleguide/bootstrap/header' %>
+
+  <section>
+    <h1>Typography</h1>
+    <%= render 'styleguide/bootstrap/typography' %>
+  </section>
+
+  <section>
+    <h1>Buttons</h1>
+    <%= render 'styleguide/bootstrap/buttons' %>
+  </section>
+
+  <section>
+    <h1>Panels</h1>
+    <%= render 'styleguide/bootstrap/panels' %>
+  </section>
+
+  <section>
+    <h1>Forms</h1>
+    <%= render 'styleguide/bootstrap/forms' %>
+  </section>
+
+  <section>
+    <h1>Tables</h1>
+    <%= render 'styleguide/bootstrap/tables' %>
+  </section>
+</div>
+
+<footer class='text-center'>
+  <small>Copyright &copy; <%= Date.today.year %></p></small>
+</footer>
+
+<style media="screen">
+  section {
+    margin-bottom: 100px;
+  }
+
+  section h1 {
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+  }
+</style>

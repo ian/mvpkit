@@ -1,0 +1,6 @@
+
+<%= render "styleguide/elements/partials/#{source}" %>
+
+<pre>
+<%= File.open(File.join(Rails.root,'app/views/styleguide/elements/partials/',"_#{source}.html.erb")).read.strip %>
+</pre>
