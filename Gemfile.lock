@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minimum_viable_product (0.0.10)
+    minimum_viable_product (0.0.16)
       analytics-ruby
       bootstrap-sass
       browserify-rails
@@ -9,7 +9,6 @@ PATH
       client_side_validations
       client_side_validations-simple_form
       cloudinary
-      dotenv-rails
       faraday
       fog
       fog-aws
@@ -112,10 +111,6 @@ GEM
     debug_inspector (0.0.2)
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.1.1)
-    dotenv-rails (2.1.1)
-      dotenv (= 2.1.1)
-      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     excon (0.51.0)
     execjs (2.7.0)

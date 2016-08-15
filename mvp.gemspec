@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'client_side_validations'
   s.add_dependency 'client_side_validations-simple_form'
   s.add_dependency "cloudinary"
-  s.add_dependency "dotenv-rails"
   s.add_dependency "geocoder"
   s.add_dependency 'faraday'
   s.add_dependency 'fog'
