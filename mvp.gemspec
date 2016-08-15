@@ -5,7 +5,7 @@ require "mvp/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "mvp"
+  s.name        = "minimum-viable-product"
   s.version     = Mvp::VERSION
   s.authors     = ["Ian Hunter"]
   s.email       = ["ianhunter@gmail.com"]
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   # s.files = Dir["engine/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
-  s.executables = ['mvp'] 
+  s.executables = ['mvp']
 
   s.add_dependency 'analytics-ruby'
   s.add_dependency 'bootstrap-sass'
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails'
   s.add_dependency "rack-canonical-host"
   s.add_dependency 'rack-ssl-enforcer'
-  s.add_dependency "rails", "~> 4.2"
+  s.add_dependency "rails", "~> 4.2.3"
   s.add_dependency 'rollbar'
   s.add_dependency 'sass-rails', '~> 5.0'
   s.add_dependency "simple_form"
