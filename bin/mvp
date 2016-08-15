@@ -8,16 +8,54 @@ No command specified, please use one of the following
   update:  update mvp inside current project
 %) unless command
 
-case ARGV[1].downcase
+case command.downcase
 when 'project'
-  `curl -s https://raw.githubusercontent.com/ian/product-validation-mvp/master/install.rb | ruby`
+  $stdin.reopen(File.open("/dev/tty", "r"))
+
+  print "Project name? "
+  project = STDIN.gets.chomp
+  error('Must specify a project name') if project == ""
+  slug = slugify(project)
+
+  puts
+  run "git clone git@github.com:ian/harness.git #{slug}"
+
+  puts
+  puts "Initializing Project"
+  files = Dir.glob("#{slug}/**/*").select { |f| File.file?(f) }
+  files.each do |file_name|
+    text = File.read(file_name)
+    new_contents = text.gsub(/__PROJECT_NAME__/, project)
+                       .gsub(/__PROJECT_NAME_SLUG__/, slug)
+
+    File.open(file_name, "w") {|file| file.puts new_contents }
+  end
+  run "cd #{slug} && rm -rf .git && rm install.rb && git init"
+
+  run "cd #{slug}; bin/setup", "Project Setup"
 when 'update'
   puts "TBD"
 end
 
 BEGIN {
+  def slugify(name)
+    slug = name.gsub(/'/, '').gsub(/[^a-z0-9]+/, '_')
+    slug.chop! if slug[-1] == '-'
+    slug
+  end
+
   def error(message)
-    puts message
+    puts
+    puts "Error: #{message}"
     exit 1
+  end
+
+  def run(cmd, message=nil)
+    if message
+      puts
+      puts message
+    end
+
+    system cmd
   end
 }
