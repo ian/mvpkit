@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-
-  mount MinimumViableProduct::Engine => "/minimum_viable_product"
+  mount MinimumViableProduct::Engine => "/"
+  root to: 'home#index'
 end
