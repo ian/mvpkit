@@ -19,7 +19,7 @@ PATH
       jquery-rails
       rack-canonical-host
       rack-ssl-enforcer
-      rails (~> 4.2.3)
+      rails (~> 4.2)
       rollbar
       sass-rails (~> 5.0)
       simple_form

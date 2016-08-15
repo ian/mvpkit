@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+command = ARGV[0]
+
+error(%%
+No command specified, please use one of the following
+  project: start a new project
+  update:  update mvp inside current project
+%) unless command
+
+case ARGV[1].downcase
+when 'project'
+  `curl -s https://raw.githubusercontent.com/ian/product-validation-mvp/master/install.rb | ruby`
+when 'update'
+  puts "TBD"
+end
+
+BEGIN {
+  def error(message)
+    puts message
+    exit 1
+  end
+}
