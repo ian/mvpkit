@@ -4,21 +4,26 @@ command = ARGV[0]
 
 error(%%
 No command specified, please use one of the following
-  project: start a new project
+  new:     start a new project
   update:  update mvp inside current project
 %) unless command
 
 case command.downcase
-when 'project'
-  $stdin.reopen(File.open("/dev/tty", "r"))
+when 'new'
+  project = if ARGV[1]
+    ARGV[1]
+  else
+    $stdin.reopen(File.open("/dev/tty", "r"))
+    print "Project name? "
+    STDIN.gets.chomp
+  end
 
-  print "Project name? "
-  project = STDIN.gets.chomp
   error('Must specify a project name') if project == ""
+
   slug = slugify(project)
 
   puts
-  run "git clone git@github.com:ian/harness.git #{slug}"
+  run "git clone git@github.com:ian/mvp-rails.git #{slug}"
 
   puts
   puts "Initializing Project"

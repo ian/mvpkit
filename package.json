@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ian/mvp.git"
+    "url": "git+https://github.com/ian/minimum-viable-product.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ian/mvp/issues"
+    "url": "https://github.com/ian/minimum-viable-product/issues"
   },
-  "homepage": "https://github.com/ian/mvp#readme",
+  "homepage": "https://github.com/ian/minimum-viable-product#readme",
   "dependencies": {
     "browserify": "~>13.1.0",
     "browserify-incremental": ">0",
