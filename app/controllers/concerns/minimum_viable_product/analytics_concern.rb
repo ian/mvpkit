@@ -64,7 +64,7 @@ module MinimumViableProduct
     end
 
     def slack_notifier
-      Slack::Notifier.new ENV['SLACK_WEBHOOK_URL'], channel: ENV['SLACK_WEBHOOK_URL'],
+      Slack::Notifier.new ENV['SLACK_WEBHOOK_URL'], channel: ENV['SLACK_POST_CHANNEL'],
                                                     username: ENV['SLACK_POST_USERNAME']
     end
 
