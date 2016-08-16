@@ -3,10 +3,6 @@
 <%- content_for :body do %>
   <% if content_for :header %>
     <%= yield :header %>
-  <% else %>
-    <div class="container">
-      <%= render 'layouts/minimum_viable_product/header' %>
-    </div>
   <% end %>
   <%= yield :carousel %>
   <div class="container">

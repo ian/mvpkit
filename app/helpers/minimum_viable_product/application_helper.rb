@@ -8,7 +8,6 @@ module MinimumViableProduct
       klass = []
       klass << "#{controller_name}-pages"
       klass << page.classes if page.classes.present?
-      klass << "hidden-header" if page.header == false
       klass.join(' ')
     end
   end
