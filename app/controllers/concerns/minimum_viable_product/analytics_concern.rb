@@ -26,7 +26,7 @@ module MinimumViableProduct
     def slack!(message, properties=nil)
       if ENV['SLACK_WEBHOOK_URL']
         _msg = [message]
-        _msg << "(#{properties.inspect})" if properties
+        _msg << properties.inspect if properties
 
         begin
           slack_notifier.ping _msg.join(' ')
