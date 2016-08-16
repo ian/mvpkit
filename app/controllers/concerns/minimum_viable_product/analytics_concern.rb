@@ -23,10 +23,13 @@ module MinimumViableProduct
       })
     end
 
-    def slack!(message)
+    def slack!(message, properties=nil)
       if ENV['SLACK_WEBHOOK_URL']
+        _msg = [message]
+        _msg << "(#{properties.inspect})" if properties
+
         begin
-          slack_notifier.ping message
+          slack_notifier.ping _msg.join(' ')
         rescue
           slack_notifier.ping "Tried to use slack messaging but failure happened"
         end
@@ -62,8 +65,7 @@ module MinimumViableProduct
 
     def slack_notifier
       Slack::Notifier.new ENV['SLACK_WEBHOOK_URL'], channel: ENV['SLACK_WEBHOOK_URL'],
-                                                    username: ENV['SLACK_POST_USERNAME'],
-                                                    channel: ENV['SLACK_POST_CHANNEL']
+                                                    username: ENV['SLACK_POST_USERNAME']
     end
 
     def analytics_id
