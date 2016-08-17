@@ -18,5 +18,8 @@
  *= require_self
  */
 
+@import 'brandbuttons/src/brand-buttons.scss';
+@import 'brandbuttons/src/brand-buttons-inversed.scss';
+
 $modal-backdrop-bg:      #FFF;
 $modal-backdrop-opacity: 0.8;
