@@ -26,5 +26,10 @@ module MinimumViableProduct
     isolate_namespace MinimumViableProduct
     config.autoload_paths << "#{Rails.root}/app"
     config.autoload_paths << "#{Rails.root}/lib"
+
+    _prot = ENV['HOST_PROTOCOL'] || "http"
+    _host = ENV['HOST_DOMAIN']   || "localhost"
+    _port = ENV['HOST_PORT']     || "3000"
+    routes.default_url_options = { host: _host, port: _port, protocol: _prot }
   end
 end
