@@ -61,7 +61,14 @@ Make sure to turn off npm cacheing (since we're loading MVP from a repo)
 heroku config:set NODE_MODULES_CACHE=false
 ```
 
-Add a scheduled task to update your sitemaps: `rake sitemap:create_upload_and_ping`
+Add a scheduled task to update your sitemaps:
+
+```
+heroku addons:create scheduler:standard
+heroku addons:open scheduler
+```
+
+Add the following task: `rake sitemap:worker`.  Your choice on the frequency but I usually use `daily`
 
 # SEO
 
