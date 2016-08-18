@@ -55,6 +55,12 @@ heroku buildpacks:set heroku/ruby
 heroku buildpacks:add --index 1 heroku/nodejs
 ```
 
+Make sure to turn off npm cacheing (since we're loading MVP from a repo)
+
+```
+heroku config:set NODE_MODULES_CACHE=false
+```
+
 Add a scheduled task to update your sitemaps: `rake sitemap:create_upload_and_ping`
 
 # SEO
