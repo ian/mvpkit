@@ -42,7 +42,9 @@ when 'new'
 
 when 'update'
   run "bundle update minimum_viable_product"
-  run "npm update minimum_viable_product"
+  # npm has a bug where it won't update new dependencies
+  # https://github.com/npm/npm/issues/1341
+  run "rm -rf node_modules; npm install"
 end
 
 BEGIN {
