@@ -37,6 +37,6 @@ namespace :sitemap do
   task worker: :environment do
     Rake::Task["sitemap:create"].invoke
     Rake::Task["sitemap:upload"].invoke
-    SitemapGenerator::Sitemap.ping_search_engines(Rails.application.routes.url_helpers.sitemap_url)
+    SitemapGenerator::Sitemap.ping_search_engines(MVP::Engine.routes.url_helpers.sitemap_url)
   end
 end
