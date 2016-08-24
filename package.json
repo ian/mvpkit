@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "postinstall" : "rm -rf node_modules/minimum_viable_product/app",
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/ian/minimum_viable_product/issues"
   },
-  "postinstall" : "rm -rf node_modules/minimum_viable_product/app",
   "homepage": "https://github.com/ian/minimum_viable_product#readme",
   "dependencies": {
     "browserify": "~>13.1.0",
