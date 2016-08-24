@@ -1,4 +1,4 @@
-//= require minimum_viable_product/application
+//= require mvp/application
 //
 //= require_self
 

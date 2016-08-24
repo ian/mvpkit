@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/ian/minimum_viable_product#readme",
   "dependencies": {
-    "brandbuttons": "https://github.com/evgenyrodionov/bootstrap-brand-buttons.git",
     "browserify": "~>13.1.0",
     "browserify-incremental": ">0",
     "is": "^3.1.0",
