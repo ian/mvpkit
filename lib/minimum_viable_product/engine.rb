@@ -27,14 +27,11 @@ module MinimumViableProduct
     config.autoload_paths << "#{Rails.root}/app"
     config.autoload_paths << "#{Rails.root}/lib"
 
-    _prot = ENV['HOST_PROTOCOL'] || (ENV['FORCE_SSL'].to_b ? "https" : "http")
-    _host = ENV['HOST_DOMAIN']   || "localhost"
-    _port = ENV['HOST_PORT']     || case Rails.env
-                                    when "production"
-                                      "80"
-                                    else
-                                      "3000"
-                                    end
-    routes.default_url_options = { host: _host, port: _port, protocol: _prot }
+    _options = {}
+    _options[:protocol] = ENV['HOST_PROTOCOL'] || (ENV['FORCE_SSL'].to_b ? "https" : "http")
+    _options[:host]     = ENV['HOST_DOMAIN']
+    _options[:port]     = ENV['HOST_PORT']
+
+    routes.default_url_options = _options
   end
 end
