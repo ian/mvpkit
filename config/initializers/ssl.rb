@@ -1,12 +1,14 @@
-case ENV['FORCE_SSL']
-when /t|true|yes|y|on/
-  Rails.application.config.middleware.use SslEnforcerOnlyProtocol, :https_port => ENV['HOST_PORT']
-end
+# case ENV['FORCE_SSL']
+# when /t|true|yes|y|on/
+#   Rails.application.config.middleware.use SslEnforcerOnlyProtocol, :https_port => ENV['HOST_PORT']
+# end
+#
+# BEGIN {
+#   class SslEnforcerOnlyProtocol < Rack::SslEnforcer
+#     def current_scheme
+#       @request.scheme == 'https'
+#     end
+#   end
+# }
 
-BEGIN {
-  class SslEnforcerOnlyProtocol < Rack::SslEnforcer
-    def current_scheme
-      @request.scheme == 'https'
-    end
-  end
-}
+Rails.application.config.force_ssl = ENV['FORCE_SSL'].to_b
