@@ -26,12 +26,5 @@ module MinimumViableProduct
     isolate_namespace MinimumViableProduct
     config.autoload_paths << "#{Rails.root}/app"
     config.autoload_paths << "#{Rails.root}/lib"
-
-    _options = {}
-    _options[:protocol] = ENV['HOST_PROTOCOL'] || (ENV['FORCE_SSL'].to_b ? "https" : "http")
-    _options[:host]     = ENV['HOST_DOMAIN']
-    _options[:port]     = ENV['HOST_PORT']
-
-    routes.default_url_options = _options
   end
 end
