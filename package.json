@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall" : "pwd"
+    "postinstall" : "echo 'POST INSTALL'"
   },
   "repository": {
     "type": "git",
