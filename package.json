@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall" : "rm -rf node_modules/minimum_viable_product/app"
+    "postinstall" : "pwd"
   },
   "repository": {
     "type": "git",
