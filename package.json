@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall" : "rm -rf app; ls"
+    "postinstall" : "rm -rf app"
   },
   "repository": {
     "type": "git",
