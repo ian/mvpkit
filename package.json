@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall" : "cd npm_modules; rm -rf minimum_viable_product/app; echo 'POST INSTALL'"
+    "postinstall" : "cd node_modules; rm -rf minimum_viable_product/app; echo 'POST INSTALL'"
   },
   "repository": {
     "type": "git",
