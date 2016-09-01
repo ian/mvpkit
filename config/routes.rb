@@ -1,6 +1,4 @@
 MinimumViableProduct::Engine.routes.draw do
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
   if Rails.env.development?
     get 'styleguide', to: 'styleguide#index'
     get 'styleguide/bootstrap', to: 'styleguide#bootstrap'

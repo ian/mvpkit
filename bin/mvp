@@ -30,11 +30,16 @@ when 'new'
   puts "\n== Initializing Project =="
   files = Dir.glob("#{slug}/**/*").select { |f| File.file?(f) }
   files.each do |file_name|
-    text = File.read(file_name)
-    new_contents = text.gsub(/__PROJECT_NAME__/, project)
-                       .gsub(/__PROJECT_NAME_SLUG__/, slug)
+    begin
+      puts "Replacing #{file_name}"
+      text = File.read(file_name)
+      new_contents = text.gsub(/__PROJECT_NAME__/, project)
+                         .gsub(/__PROJECT_NAME_SLUG__/, slug)
 
-    File.open(file_name, "w") {|file| file.puts new_contents }
+      File.open(file_name, "w") {|file| file.puts new_contents }
+    rescue
+
+    end
   end
   run "cd #{slug} && rm -rf .git && git init"
 
