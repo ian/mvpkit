@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'analytics-ruby'
   s.add_dependency 'bootstrap-sass'
-  s.add_dependency "browserify-rails"
   s.add_dependency 'carrierwave'
   s.add_dependency 'client_side_validations'
   s.add_dependency 'client_side_validations-simple_form'
