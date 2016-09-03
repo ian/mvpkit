@@ -29,7 +29,7 @@ track = function(event, attributes, fn){
   }
 
   attrs = _.extend({
-    iteration: '<%= MVP::Iteration.version %>'
+    iteration: $('body').data('iteration')
   }, attributes)
 
   analytics.track(event, attrs, fn)
