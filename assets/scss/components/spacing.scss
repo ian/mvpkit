@@ -1,4 +1,4 @@
-@import 'bootstrap';
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
 
 @for $i from 0 through 100 {
   .mt#{$i} { margin-top: #{$i}px !important; }

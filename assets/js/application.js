@@ -11,6 +11,8 @@
 //
 //= require_self
 
+require('bootstrap-loader')
+
 var is = require('is')
 var _  = require('lodash')
 
@@ -29,7 +31,7 @@ track = function(event, attributes, fn){
   }
 
   attrs = _.extend({
-    iteration: '<%= MVP::Iteration.version %>'
+    iteration: $('body').data('iteration')
   }, attributes)
 
   analytics.track(event, attrs, fn)
