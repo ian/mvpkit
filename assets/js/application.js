@@ -11,6 +11,8 @@
 //
 //= require_self
 
+require('bootstrap-loader')
+
 var is = require('is')
 var _  = require('lodash')
 
