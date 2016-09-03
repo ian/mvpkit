@@ -1,8 +1,6 @@
 require('jquery')
 require('jquery-ujs')
 require('jquery.cookie')
-require('client_side_validations/vendor/assets/javascripts/rails.validations')
-require('client_side_validations-simple_form/vendor/assets/javascripts/rails.validations.simple_form')
 var _  = require('lodash')
 var is = require('is')
 require('bootstrap-loader')
