@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ian/minimum_viable_product#readme",
   "dependencies": {
+    "babelify": "^7.3.0",
     "browserify": "~>13.1.0",
     "browserify-incremental": ">0",
     "is": "^3.1.0",
