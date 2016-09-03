@@ -1,10 +1,9 @@
 PATH
   remote: .
   specs:
-    minimum_viable_product (0.0.31)
+    minimum_viable_product (0.3.1)
       analytics-ruby
       bootstrap-sass
-      browserify-rails
       carrierwave
       client_side_validations
       client_side_validations-simple_form
@@ -68,7 +67,7 @@ GEM
     analytics-ruby (2.2.2)
       commander (~> 4.4)
     arel (6.0.3)
-    autoprefixer-rails (6.4.0.2)
+    autoprefixer-rails (6.4.1)
       execjs
     aws_cf_signer (0.1.3)
     better_errors (2.1.1)
@@ -80,9 +79,6 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    browserify-rails (3.1.0)
-      railties (>= 4.0.0, < 5.1)
-      sprockets (>= 3.5.2)
     builder (3.2.2)
     bullet (5.0.0)
       activesupport (>= 3.0.0)
@@ -101,7 +97,7 @@ GEM
     client_side_validations-simple_form (3.2.4)
       client_side_validations (~> 4.2.3)
       simple_form (~> 3.2)
-    cloudinary (1.2.2)
+    cloudinary (1.2.3)
       aws_cf_signer
       rest-client
     coderay (1.1.1)
@@ -109,10 +105,10 @@ GEM
       highline (~> 1.7.2)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
-    domain_name (0.5.20160615)
+    domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    excon (0.51.0)
+    excon (0.52.0)
     execjs (2.7.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
@@ -189,7 +185,7 @@ GEM
       multi_json (~> 1.10)
     fog-local (0.3.0)
       fog-core (~> 1.27)
-    fog-openstack (0.1.11)
+    fog-openstack (0.1.12)
       fog-core (>= 1.40)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
@@ -220,7 +216,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (1.1.3)
+    fog-softlayer (1.1.4)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -235,9 +231,9 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (1.0.0)
+    fog-vsphere (1.0.1)
       fog-core
-      rbvmomi (~> 1.8)
+      rbvmomi (~> 1.8.0)
     fog-xenserver (0.2.3)
       fog-core
       fog-xml
@@ -257,7 +253,7 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
-    jquery-rails (4.1.1)
+    jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -333,7 +329,7 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     semantic (1.4.1)
-    simple_form (3.2.1)
+    simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     sitemap_generator (5.1.0)

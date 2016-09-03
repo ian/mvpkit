@@ -1,5 +1,4 @@
 require 'bootstrap-sass'
-require 'browserify-rails'
 require 'carrierwave'
 require 'client_side_validations'
 require 'client_side_validations/simple_form'
