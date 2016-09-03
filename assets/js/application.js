@@ -1,11 +1,9 @@
 require('jquery')
-require('jquery_ujs')
+require('jquery-ujs')
 require('jquery.cookie')
 var _  = require('lodash')
 var is = require('is')
 require('bootstrap-loader')
-require('rails.validations')
-require('rails.validations.simple_form')
 
 require('./init/controllers')
 require('./init/forms')
