@@ -1,20 +1,15 @@
-//= require jquery
-//= require jquery_ujs
-//= require jquery.cookie
-//= require lodash
-//= require is
-//= require bootstrap
-//= require rails.validations
-//= require rails.validations.simple_form
-//
-//= require_tree ./init
-//
-//= require_self
-
-require('bootstrap-loader')
-
-var is = require('is')
+require('jquery')
+require('jquery_ujs')
+require('jquery.cookie')
 var _  = require('lodash')
+var is = require('is')
+require('bootstrap-loader')
+require('rails.validations')
+require('rails.validations.simple_form')
+
+require('./init/controllers')
+require('./init/forms')
+require('./init/modals')
 
 track = function(event, attributes, fn){
   console.log("Track: " + event + " " + JSON.stringify(attributes))
