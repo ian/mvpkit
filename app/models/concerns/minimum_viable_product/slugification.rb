@@ -15,7 +15,7 @@ module MinimumViableProduct
     private
 
     def slugify(str)
-      str.gsub(/\s/,'_').dasherize.downcase
+      str.gsub(/[^a-zA-Z0-9]/,'-').downcase
     end
   end
 end
