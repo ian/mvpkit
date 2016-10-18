@@ -1,7 +1,5 @@
 require 'bootstrap-sass'
 require 'carrierwave'
-require 'client_side_validations'
-require 'client_side_validations/simple_form'
 require 'cloudinary'
 require 'faraday'
 require 'fog'
