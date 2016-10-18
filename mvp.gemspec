@@ -20,14 +20,12 @@ Gem::Specification.new do |s|
   s.executables = ['mvp']
 
   s.add_dependency 'analytics-ruby'
-  s.add_dependency 'bootstrap-sass'
   s.add_dependency 'carrierwave'
   s.add_dependency "cloudinary"
   s.add_dependency "geocoder"
   s.add_dependency 'faraday'
   s.add_dependency 'fog'
   s.add_dependency 'fog-aws'
-  s.add_dependency 'font-awesome-sass'
   s.add_dependency "hashie"
   s.add_dependency 'jquery-rails'
   s.add_dependency "rack-canonical-host"
