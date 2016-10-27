@@ -6,7 +6,6 @@ var is = require('is')
 
 require('./init/controllers')
 require('./init/forms')
-require('./init/modals')
 
 track = function(event, attributes, fn){
   console.log("Track: " + event + " " + JSON.stringify(attributes))

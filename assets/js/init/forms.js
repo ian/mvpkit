@@ -9,8 +9,4 @@ $(function(){
   $('form.disable-on-submit').on('submit', function(e){
     $(this).find(".btn").addClass('disabled')
   })
-
-  ClientSideValidations.callbacks.form.fail = function(form, eventData){
-    $("form.disable-on-submit .btn").removeClass('disabled')
-  }
 })
