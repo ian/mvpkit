@@ -8,7 +8,6 @@ require 'jquery-rails'
 require 'rack-canonical-host'
 require 'rack-ssl-enforcer'
 require 'rollbar'
-require "simple_form"
 require 'sitemap_generator'
 require 'segment'
 require 'slack-notifier'
