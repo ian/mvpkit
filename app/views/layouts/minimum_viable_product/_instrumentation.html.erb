@@ -25,6 +25,7 @@ var _rollbarConfig = {
 
     fbq('init', '<%= ENV['FACEBOOK_TRACKING_ID'] %>');
     fbq('track', "PageView");</script>
+    <%= page.facebook_javascript.try(:html_safe) %>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=<%= ENV['FACEBOOK_TRACKING_ID'] %>&ev=PageView&noscript=1"
     /></noscript>
