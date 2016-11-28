@@ -11,6 +11,7 @@ module MinimumViableProduct
     def current_user=(user)
       session[COOKIE_ID] = user.id
     end
+    alias_method :sign_in, :current_user=
 
     def current_user
       @current_user ||= begin
