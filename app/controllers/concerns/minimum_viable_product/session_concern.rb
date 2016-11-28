@@ -8,7 +8,7 @@ module MinimumViableProduct
       helper_method :current_user
     end
 
-    def sign_in(user)
+    def current_user=(user)
       session[COOKIE_ID] = user.id
     end
 
