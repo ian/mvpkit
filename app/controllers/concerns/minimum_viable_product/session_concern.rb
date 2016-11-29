@@ -34,7 +34,7 @@ module MinimumViableProduct
 
     # http://blog.laaz.org/tech/2012/12/27/rails-redirect_back_or_default/
     def redirect_back_or_default(default = root_url)
-      redirect_to(session.delete(:return_to) || request.referer || default)
+      redirect_to(session.delete(:return_to) || default || request.referer)
     end
     alias_method :redirect_to_back_or_default, :redirect_back_or_default
   end
