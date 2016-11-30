@@ -40,4 +40,5 @@ module MinimumViableProduct
       redirect_to(session.delete(:return_to) || default || request.referer)
     end
     alias_method :redirect_to_back_or_default, :redirect_back_or_default
+  end
 end
