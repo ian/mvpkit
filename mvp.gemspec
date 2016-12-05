@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'fog'
   s.add_dependency 'fog-aws'
   s.add_dependency "hashie"
-  s.add_dependency 'jquery-rails'
+  # s.add_dependency 'jquery-rails'
   s.add_dependency "rack-canonical-host"
   s.add_dependency 'rack-ssl-enforcer'
   s.add_dependency "rails", "~> 4.2.3"

@@ -1,7 +1,7 @@
 require('jquery')
 require('jquery-ujs')
 require('jquery.cookie')
-var _  = require('lodash')
+// var _  = require('lodash')
 var is = require('is')
 
 require('./init/controllers')

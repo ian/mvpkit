@@ -1,5 +1,5 @@
 module MinimumViableProduct
-  module ApplicationHelper
+  module BodyHelper
     def body_id
       "#{controller_name}-#{action_name}-page"
     end
