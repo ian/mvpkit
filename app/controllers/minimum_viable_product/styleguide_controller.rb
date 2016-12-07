@@ -1,7 +1,5 @@
-require_dependency "minimum_viable_product/controller"
-
 module MinimumViableProduct
-  class StyleguideController < Controller
+  class StyleguideController < ActionController::Base
     def index
       render layout: 'minimum_viable_product/basic'
     end

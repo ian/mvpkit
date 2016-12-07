@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minimum_viable_product (0.6.0)
+    minimum_viable_product (0.6.1)
       analytics-ruby
       carrierwave
       cloudinary

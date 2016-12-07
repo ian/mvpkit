@@ -1,7 +1,5 @@
-require_dependency "minimum_viable_product/controller"
-
 module MinimumViableProduct
-  class SeoController < Controller
+  class SeoController < ActionController::Base
     def robots
       render text: %%
   User-agent: *
