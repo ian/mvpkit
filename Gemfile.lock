@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minimum_viable_product (0.5.7)
+    minimum_viable_product (0.6.0)
       analytics-ruby
       carrierwave
       cloudinary
@@ -10,7 +10,6 @@ PATH
       fog-aws
       geocoder
       hashie
-      jquery-rails
       rack-canonical-host
       rack-ssl-enforcer
       rails (~> 4.2.3)
@@ -85,7 +84,7 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.1)
-    commander (4.4.0)
+    commander (4.4.1)
       highline (~> 1.7.2)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
@@ -223,7 +222,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    geocoder (1.4.0)
+    geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.6)
@@ -233,10 +232,6 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
-    jquery-rails (4.2.1)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
     json (1.8.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
