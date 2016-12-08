@@ -1,37 +1,51 @@
+# encoding: utf-8
+
+require 'rubygems'
+require 'bundler'
 begin
-  require 'bundler/setup'
-rescue LoadError
-  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
 end
+require 'rake'
 
-require 'rdoc/task'
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Minimum Viable Product'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
+  gem.name = "minimum_viable_product"
+  gem.homepage = "http://github.com/ian/minimum_viable_product"
+  gem.license = "MIT"
+  gem.summary = %Q{The start-to-finish 3 minute product platform}
+  gem.description = %Q{Built for Developers. Ideal for MVPs, product ideation and validation.}
+  gem.email = "ianhunter@gmail.com"
+  gem.authors = ["Ian Hunter"]
+  # dependencies defined in Gemfile
 end
-
-APP_RAKEFILE = File.expand_path("../test/dummy/Rakefile", __FILE__)
-load 'rails/tasks/engine.rake'
-
-
-load 'rails/tasks/statistics.rake'
-
-
-
-Bundler::GemHelper.install_tasks
+Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/test_*.rb'
+  test.verbose = true
 end
 
+desc "Code coverage detail"
+task :simplecov do
+  ENV['COVERAGE'] = "true"
+  Rake::Task['test'].execute
+end
 
-task default: :test
+task :default => :test
+
+require 'rdoc/task'
+Rake::RDocTask.new do |rdoc|
+  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "minimum_viable_product #{version}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
