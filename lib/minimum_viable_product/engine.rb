@@ -17,7 +17,7 @@ require_relative './ext/string'
 module MinimumViableProduct
   class Engine < ::Rails::Engine
     isolate_namespace MinimumViableProduct
-    config.autoload_paths << "#{Rails.root}/app"
-    config.autoload_paths << "#{Rails.root}/lib"
+    # config.autoload_paths << "#{Rails.root}/app"
+    # config.autoload_paths << "#{Rails.root}/lib"
   end
 end
