@@ -56,7 +56,6 @@ GEM
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    docile (1.1.5)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -282,11 +281,6 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     semantic (1.4.1)
-    simplecov (0.10.0)
-      docile (~> 1.1.0)
-      json (~> 1.8)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
     sitemap_generator (5.2.0)
       builder (~> 3.0)
     slack-notifier (1.5.1)
@@ -336,7 +330,6 @@ DEPENDENCIES
   rollbar
   sass-rails (~> 5.0)
   semantic
-  simplecov
   sitemap_generator
   slack-notifier
   web-console (~> 2.0)
