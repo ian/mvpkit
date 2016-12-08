@@ -10,7 +10,6 @@ gem 'fog-aws'
 gem "hashie"
 gem "rack-canonical-host"
 gem 'rack-ssl-enforcer'
-gem "rails", "~> 4.2.3"
 gem 'rollbar'
 gem 'sass-rails', '~> 5.0'
 gem 'sitemap_generator'
