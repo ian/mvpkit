@@ -51,8 +51,8 @@ when 'update'
   # https://github.com/npm/npm/issues/1341
   run "rm -rf node_modules; npm install"
 when '-v','version'
-  require_relative '../lib/minimum_viable_product/version'
-  puts "Version #{MinimumViableProduct::VERSION}"
+  version = File.read(File.dirname(__FILE__) + '/../VERSION') 
+  puts "Version #{version}"
 end
 
 BEGIN {
