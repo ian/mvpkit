@@ -27,20 +27,3 @@ window.track = function(event, attributes, fn){
 
   analytics.track(event, attrs, fn)
 }
-
-setupAutomaticTracing = function(){
-  _.each(arguments, function(e){
-    switch (e.toLowerCase()) {
-      case 'buttons':
-        $('.btn').on('click', function(){
-          window.track("Button Clicked", { name: $(this).text() || $(this).attr('value') })
-        })
-        break;
-      case 'links':
-        $('a:not(.btn)').on('click', function(){
-          window.track("Link Clicked", { name: ($(this).text() || $(this).attr('value')) })
-        })
-        break;
-    }
-  })
-}
