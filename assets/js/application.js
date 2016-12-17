@@ -7,7 +7,7 @@ var is = require('is')
 require('./init/controllers')
 require('./init/forms')
 
-track = function(event, attributes, fn){
+window.track = function(event, attributes, fn){
   console.log("Track: " + event + " " + JSON.stringify(attributes))
 
   if (is.fn(attributes)) fn = attributes, attributes = null;
@@ -44,5 +44,3 @@ setupAutomaticTracing = function(){
     }
   })
 }
-
-window.track = track;
