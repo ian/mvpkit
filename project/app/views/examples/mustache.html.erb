@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-9">
+    <h1>Mustache Rendering</h1>
+    <p>
+      You can render mustache files by using <code>&lt;<%= "%= render_mustache 'examples/mustache/template', { some: 'value' } %" %>&gt;</code>.
+    </p>
+    <p>
+      Place your files into <code>app/views</code> and reference it relatively.  You don't need the <code>.mustache</code> file suffix.
+    </p>
+    <p>
+      Here we render <code>examples/mustache/template</code>:
+    </p>
+
+    <div class="well">
+      <%= render_mustache 'examples/mustache/template', { some: 'value' } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<% page.classes = "body-basic" %>
+<%= render 'layouts/includes' %>
+
+<%- content_for :body do %>
+<% if content_for :header %>
+  <%= yield :header %>
+<% else %>
+  <div class="container">
+    <%= render 'layouts/header' %>
+  </div>
+<% end %>
+<div class="container">
+  <%= yield %>
+</div>
+<% end %>
+
+<%= render template: "layouts/minimum_viable_product/application" %>
