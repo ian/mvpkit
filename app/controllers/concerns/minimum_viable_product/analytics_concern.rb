@@ -7,20 +7,30 @@ module MinimumViableProduct
     included do
       before_action :generate_uid_if_not_set
       helper_method :analytics_id
+      helper_method :analytics_identify_events
+      helper_method :analytics_track_events
+    end
+
+    def identify!(id, properties={})
+      return if session[INVISIBLE_SESSION_COOKIE].to_b == true
+
+      analytics_identify_events << {
+        id: id,
+        properties: properties
+      }
     end
 
     def track!(event, properties={})
       return if session[INVISIBLE_SESSION_COOKIE].to_b == true
-      return unless analytics
-      analytics.track({
-        user_id: analytics_id,
-        event: event,
+
+      analytics_track_events << {
+        name: event,
         properties: properties.reverse_merge({
           iteration: MVP::Iteration.version,
           user: current_user.try(:name),
           url: request.fullpath
         })
-      })
+      }
     end
 
     def slack!(message, properties=nil)
@@ -36,32 +46,17 @@ module MinimumViableProduct
       end
     end
 
-    def page!(name, opts={})
-      return if sessions[INVISIBLE_SESSION_COOKIE].to_b == true
-      return unless analytics
-      analytics.page(
-        user_id: current_user.try(:id),
-        name: name,
-        category: opts[:category],
-        properties: {
-          url: opts[:url],
-          iteration: MVP::Iteration.version
-        }
-      )
+    def analytics_identify_events
+      @__analytics_identify_events ||= []
+      @__analytics_identify_events
+    end
+
+    def analytics_track_events
+      @__analytics_track_events ||= []
+      @__analytics_track_events
     end
 
     private
-
-    def analytics
-      unless defined?(Analytics)
-        puts ""
-        puts "Please set SEGMENT_WRITE_KEY in .env"
-        puts ""
-        nil
-      else
-        Analytics
-      end
-    end
 
     def slack_notifier
       Slack::Notifier.new ENV['SLACK_WEBHOOK_URL'], channel: ENV['SLACK_POST_CHANNEL'],
@@ -69,7 +64,7 @@ module MinimumViableProduct
     end
 
     def analytics_id
-      current_user.try(:id) || cookies[:uid]
+      cookies[:uid]
     end
 
     def generate_uid_if_not_set
