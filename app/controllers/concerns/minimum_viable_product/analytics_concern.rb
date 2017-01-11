@@ -15,8 +15,8 @@ module MinimumViableProduct
       return if session[INVISIBLE_SESSION_COOKIE].to_b == true
 
       analytics_identify_events << {
-        id: id,
-        properties: properties
+        'id': id,
+        'properties': properties
       }
     end
 
@@ -24,8 +24,8 @@ module MinimumViableProduct
       return if session[INVISIBLE_SESSION_COOKIE].to_b == true
 
       analytics_track_events << {
-        name: event,
-        properties: properties.reverse_merge({
+        'name': event,
+        'properties': properties.reverse_merge({
           iteration: MVP::Iteration.version,
           user: current_user.try(:name),
           url: request.fullpath
