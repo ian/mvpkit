@@ -39,10 +39,10 @@ var _rollbarConfig = {
     analytics.load('<%= ENV['SEGMENT_WRITE_KEY'] %>');
 
     <% analytics_identify_events.each do |event| %>
-      analytics.identify('<%= event[:id] %>', <%= event[:properties].to_json.html_safe %>);
+      analytics.identify('<%= event['id'] %>', <%= event['properties'].to_json.html_safe %>);
     <% end %>
     <% analytics_track_events.each do |event| %>
-      analytics.track('<%= event[:name] %>', <%= event[:properties].to_json.html_safe %>);
+      analytics.track('<%= event['name'] %>', <%= event['properties'].to_json.html_safe %>);
     <% end %>
 
     analytics.page('<%= controller.controller_path %>.<%= controller.action_name %>', {
