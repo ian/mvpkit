@@ -14,16 +14,19 @@ module MinimumViableProduct
     def identify!(id, properties={})
       return if session[INVISIBLE_SESSION_COOKIE].to_b == true
 
-      analytics_identify_events << {
+      events = flash['__analytics_identify_events'] ||= []
+      events << {
         'id': id,
         'properties': properties
       }
+      flash['__analytics_identify_events'] = events
     end
 
     def track!(event, properties={})
       return if session[INVISIBLE_SESSION_COOKIE].to_b == true
 
-      analytics_track_events << {
+      events = flash['__analytics_track_events'] ||= []
+      events << {
         'name': event,
         'properties': properties.reverse_merge({
           iteration: MVP::Iteration.version,
@@ -31,6 +34,7 @@ module MinimumViableProduct
           url: request.fullpath
         })
       }
+      flash['__analytics_track_events'] = events
     end
 
     def slack!(message, properties=nil)
@@ -47,13 +51,13 @@ module MinimumViableProduct
     end
 
     def analytics_identify_events
-      @__analytics_identify_events ||= []
-      @__analytics_identify_events
+      flash['__analytics_identify_events'] ||= []
+      flash['__analytics_identify_events']
     end
 
     def analytics_track_events
-      @__analytics_track_events ||= []
-      @__analytics_track_events
+      flash['__analytics_track_events'] ||= []
+      flash['__analytics_track_events']
     end
 
     private
