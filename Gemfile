@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem 'analytics-ruby'
 gem 'carrierwave'
 gem "cloudinary"
 gem "geocoder"
