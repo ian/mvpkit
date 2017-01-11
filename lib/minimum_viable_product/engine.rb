@@ -8,7 +8,6 @@ require 'rack-canonical-host'
 require 'rack-ssl-enforcer'
 require 'rollbar'
 require 'sitemap_generator'
-require 'segment'
 require 'slack-notifier'
 
 require_relative './ext/nil'
