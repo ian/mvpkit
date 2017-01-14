@@ -15,7 +15,7 @@ namespace :sitemap do
 
     Dir.entries(File.join(Rails.root, "tmp", "sitemaps")).each do |file_name|
       next if ['.', '..', '.DS_Store'].include? file_name
-      path = "#{ENV['PROJECT_NAME']}/sitemaps/#{file_name}"
+      path = "#{Rails.application.class.parent_name.underscore}/sitemaps/#{file_name}"
       file = File.new(File.join(Rails.root, "tmp", "sitemaps", file_name))
 
       begin
