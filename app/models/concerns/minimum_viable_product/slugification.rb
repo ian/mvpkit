@@ -4,11 +4,12 @@ module MinimumViableProduct
 
     module ClassMethods
       def slugify(name, opts={})
-        _opts = opts.reverse_merge(:if => lambda{ |obj| obj.send("#{name}_changed?".to_sym) })
         before_validation -> {
-          self.slug = slugify(self.send(name.to_sym))
-          self.slug += SecureRandom.uuid if self.class.find_by(slug: self.slug).present?
-        }, _opts
+          return true if self.slug.present?
+          self.slug =  slugify(self.send(name.to_sym))
+          self.slug += "-#{SecureRandom.uuid}" if self.class.find_by(slug: self.slug).present?
+        }, opts
+        validates :slug, uniqueness: true
       end
     end
 
