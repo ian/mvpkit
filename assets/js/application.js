@@ -1,7 +1,7 @@
 require('jquery')
 require('jquery-ujs')
 require('jquery.cookie')
-// var _  = require('lodash')
+var _  = require('lodash')
 var is = require('is')
 
 require('./init/controllers')
@@ -17,13 +17,15 @@ window.track = function(event, attributes, fn){
     return
   }
 
-  if (typeof(analytics) == 'undefined') {
-    return
-  }
-
-  attrs = _.extend({
+  let attrs = _.extend({
     iteration: $('body').data('iteration')
   }, attributes)
 
-  analytics.track(event, attrs, fn)
+  if (typeof(analytics) != 'undefined') {
+    analytics.track(event, attrs, fn);
+  }
+
+  if (typeof(amplitude) != 'undefined') {
+    amplitude.getInstance().logEvent(event, attrs, fn);
+  }
 }
