@@ -17,7 +17,7 @@ window.track = function(event, attributes, fn){
     return
   }
 
-  let attrs = _.extend({
+  var attrs = _.extend({
     iteration: $('body').data('iteration')
   }, attributes)
 
