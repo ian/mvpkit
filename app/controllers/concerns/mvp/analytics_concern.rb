@@ -1,4 +1,4 @@
-module MinimumViableProduct
+module MVP
   module AnalyticsConcern
     extend ActiveSupport::Concern
 

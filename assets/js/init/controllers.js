@@ -1,6 +1,6 @@
 window.controllers = {}
 
-$(function() {
+let handler = function(){
   var $body = $("body");
   var controller = $body.data("controller").replace(/\//g, "_");
   var action = $body.data("action");
@@ -20,4 +20,7 @@ $(function() {
       activeController[action]();
     }
   }
-});
+}
+
+// $(handler);
+document.addEventListener("turbolinks:load", handler)

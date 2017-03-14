@@ -13,9 +13,9 @@ require 'slack-notifier'
 require_relative './ext/nil'
 require_relative './ext/string'
 
-module MinimumViableProduct
+module MVP
   class Engine < ::Rails::Engine
-    isolate_namespace MinimumViableProduct
+    isolate_namespace MVP
     # config.autoload_paths << "#{Rails.root}/app"
     # config.autoload_paths << "#{Rails.root}/lib"
   end

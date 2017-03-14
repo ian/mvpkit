@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "minimum_viable_product"
-  gem.homepage = "http://github.com/ian/minimum_viable_product"
+  gem.name = "mvpkit"
+  gem.homepage = "http://github.com/ian/mvp"
   gem.license = "MIT"
   gem.summary = %Q{The start-to-finish 3 minute product platform}
   gem.description = %Q{Built for Developers. Ideal for MVPs, product ideation and validation.}
@@ -46,7 +46,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "minimum_viable_product #{version}"
+  rdoc.title = "MVP #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

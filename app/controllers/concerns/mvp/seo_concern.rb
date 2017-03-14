@@ -1,4 +1,4 @@
-module MinimumViableProduct
+module MVP
   module SEOConcern
     extend ActiveSupport::Concern
 
