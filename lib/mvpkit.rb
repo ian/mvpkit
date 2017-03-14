@@ -1,6 +1,6 @@
 module MVP
 end
 
-MinimumViableProduct = MVP
+MinimumViableProduct = Mvp = MVP
 
 require "mvp/engine"
