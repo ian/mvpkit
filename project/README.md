@@ -3,7 +3,7 @@
 Install the mvp gem:
 
 ```
-gem install minimum_viable_product
+gem install mvpkit
 ```
 
 Then setup your project:
