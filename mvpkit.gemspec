@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.date = "2017-03-27"
   s.description = "Built for Developers. Ideal for MVPs, product ideation and validation."
   s.email = "ianhunter@gmail.com"
+  s.executables = ["mvp"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
