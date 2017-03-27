@@ -30,7 +30,6 @@ when 'new'
   files = Dir.glob("#{slug}/**/*").select { |f| File.file?(f) }
   files.each do |file_name|
     begin
-      puts "Replacing #{file_name}"
       text = File.read(file_name)
       new_contents = text.gsub(/__PROJECT_NAME__/, project)
                          .gsub(/__PROJECT_NAME_SLUG__/, slug)
