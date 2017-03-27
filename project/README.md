@@ -43,7 +43,6 @@ heroku create PROJECT
 You're probably going to want Database backups.  This will let you use `rake db:import`
 
 ```
-heroku addons:create heroku-postgresql:hobby-dev
 heroku pg:backups capture
 ```
 

@@ -1,17 +1,28 @@
-<% page.classes = "body-basic" %>
-<%= render 'layouts/includes' %>
+<%- content_for :javascripts do %>
+  <%= javascript_include_tag 'https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js' %>
+<% end %>
+
+<%- content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
 
 <%- content_for :body do %>
-<% if content_for :header %>
-  <%= yield :header %>
-<% else %>
-  <div class="container">
-    <%= render 'layouts/header' %>
+  <% unless page.hide_header == true %>
+    <% if content_for :header %>
+      <%= yield :header %>
+    <% else %>
+      <%= render 'layouts/header' %>
+    <% end %>
+  <% end %>
+
+  <%= yield :pre %>
+
+  <div class="container <%= page.container_class %>">
+    <%= render 'layouts/notifications' %>
+    <%= yield %>
   </div>
-<% end %>
-<div class="container">
-  <%= yield %>
-</div>
 <% end %>
 
 <%= render template: "layouts/minimum_viable_product/application" %>

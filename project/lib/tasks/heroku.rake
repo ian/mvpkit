@@ -9,7 +9,9 @@ end
 
 namespace :heroku do
   desc 'Pull down production database'
-  task :import => ['heroku:dump:postgres', 'heroku:import:postgres'] do
+  # task :import => ['heroku:dump:postgres', 'heroku:import:postgres'] do
+  task :import => ['heroku:import:neo4j'] do
+    puts
     puts "Done"
   end
 
@@ -33,6 +35,13 @@ namespace :heroku do
   end
 
   namespace :import do
+    task :neo4j do
+      puts "Importing to Neo ..."
+      run "rm -rf /usr/local/Cellar/neo4j/3.0.6/libexec/data/databases/graph.db/"
+      run "tar xvfz tmp/graph.tar.gz -C /usr/local/Cellar/neo4j/3.0.6/libexec/data/databases"
+      run "neo4j restart"
+    end
+
     task :postgres => ['kill_postgres_connections','db:drop','db:create'] do
       config   = Rails.configuration.database_configuration
       host     = config[Rails.env]["host"]
@@ -65,6 +74,5 @@ namespace :heroku do
         fail $?.inspect
       end
     end
-
   end
 end

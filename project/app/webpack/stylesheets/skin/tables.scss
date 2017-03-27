@@ -1,0 +1,10 @@
+.table th {
+  border-top: 0;
+  margin-bottom: 0;
+}
+
+.table.no-top-border {
+  tr:first-child td {
+    border-top: 0;
+  }
+}

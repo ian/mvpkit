@@ -1,0 +1,30 @@
+.selectize-input, .selectize-input.has-items {
+  padding: 0.5rem 0.75rem;
+}
+
+.selectize-control.multi .selectize-input > div {
+  background: #98A8BB;
+  color: #FFF;
+  font-size: 0.9em;
+}
+
+.selectize-control::before {
+  -moz-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  content: ' ';
+  z-index: 2;
+  position: absolute;
+  display: block;
+  top: 12px;
+  right: 34px;
+  width: 16px;
+  height: 16px;
+  background: url(/images/spinner.gif);
+  background-size: 16px 16px;
+  opacity: 0;
+}
+
+.selectize-control.loading::before {
+  opacity: 1.0;
+}

@@ -2,17 +2,39 @@
   <div class="col-md-9">
     <h1>Mustache Rendering</h1>
     <p>
-      You can render mustache files by using <code>&lt;<%= "%= render_mustache 'examples/mustache/template', { some: 'value' } %" %>&gt;</code>.
+      You can render mustache files by using <code>&lt;<%= "%= render_mustache 'examples/template', { some: 'value' } %" %>&gt;</code>.
     </p>
     <p>
       Place your files into <code>app/views</code> and reference it relatively.  You don't need the <code>.mustache</code> file suffix.
     </p>
+
+    <hr>
+
+    <h2>Via Ruby</h2>
     <p>
-      Here we render <code>examples/mustache/template</code>:
+      <code><%%= render_mustache 'examples/template', { some: 'value' } %></code>
+      <br>
+      will render:
     </p>
 
     <div class="well">
-      <%= render_mustache 'examples/mustache/template', { some: 'value' } %>
+      <%= render_mustache 'examples/template', { some: 'value' } %>
     </div>
+
+    <hr>
+
+    <h2>Via JavaScript</h2>
+    <p>
+      <pre>
+        <code>&lt;script type="text/javascript">
+          document.write(Templates['examples/template']())
+        &lt;/script></code>
+      </pre>
+      <br>
+      will render:
+      <script type="text/javascript">
+        document.write(Templates['examples/template']())
+      </script>
+    </p>
   </div>
 </div>
