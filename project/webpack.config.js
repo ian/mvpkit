@@ -1,67 +1,76 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const prod = process.argv.indexOf('-p') !== -1;
+const css_output_template = "stylesheets/[name]-compiled.css";
+const js_output_template = "javascripts/[name]-compiled.js";
+
 module.exports = {
-  entry: [
-    './assets/javascripts/pack.js',
-    './assets/stylesheets/style.scss',
-  ],
-  output: {
-    path: path.join(__dirname, 'public', 'assets'),
-    filename: 'pack.js',
-    publicPath: '/assets',
+  context: __dirname + "/app/webpack",
+  entry: {
+    pack: ["./javascripts/pack.js", "./stylesheets/pack.scss"]
   },
+  devtool: 'source-map',
   plugins: [new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" })],
+  output: {
+    path: __dirname + "/app/assets",
+    filename: js_output_template,
+  },
   module: {
     loaders: [
-    {
-      test: /\.(js|jsx)$/,
-      include: path.join(__dirname, '/app'),
-      exclude: path.join(__dirname, '/node_modules'),
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react'],
-        plugins: ["transform-object-rest-spread"]
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
+      },
+      // {
+      //   test: /\.(css|scss|sass)$/,
+      //   include: /node_modules/,
+      //   // loader: ExtractTextPlugin.extract("css!sass")
+      //   // loader: ExtractTextPlugin.extract('style-loader!css-loader!sass-loader')
+      //   loaders: ["style-loader", "css-loader", "sass-loader"]
+      // },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader!sass-loader"})
       }
-    },
-    {
-        test: /\.(html|mustache)$/,
-        loader: 'mustache'
-        // loader: 'mustache?minify'
-        // loader: 'mustache?{ minify: { removeComments: false } }'
-        // loader: 'mustache?noShortcut'
-    },
-    {
-      test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
-      loader: 'url',
-    },
-    {
-      test: /\.coffee$/,
-      loader: "coffee-loader"
-    },
-    {
-      test: /\.(coffee\.md|litcoffee)$/,
-      loader: "coffee-loader?literate"
-    },
-    {
-      test: /\.(css|scss|sass)$/,
-      loader: ExtractTextPlugin.extract('css!sass?indentedSyntax=true&sourceMap=true')
-    }]
-  },
-  resolve: {
-    root: path.resolve('./assets'),
-    // tell webpack which extensions to auto search when it resolves modules. With this,
-    // you'll be able to do `require('./utils')` instead of `require('./utils.js')`
-    extensions: ['', '.js'],
-    // by default, webpack will search in `web_modules` and `node_modules`. Because we're using
-    // Bower, we want it to look in there too
-    // modulesDirectories: [ 'node_modules' ],
-  },
-  sassLoader: {
-    includePaths: [path.resolve(__dirname, "./node_modules")]
+    ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin(css_output_template),
+
+    function() {
+      // delete previous outputs
+      this.plugin("compile", function() {
+        let basepath = __dirname + "/public";
+        // let paths = ["/javascripts", "/stylesheets"];
+        let paths = ["/stylesheets"];
+
+        for (let x = 0; x < paths.length; x++) {
+          const asset_path = basepath + paths[x];
+
+          fs.readdir(asset_path, function(err, files) {
+            if (files === undefined) {
+              return;
+            }
+
+            for (let i = 0; i < files.length; i++) {
+              fs.unlinkSync(asset_path + "/" + files[i]);
+            }
+          });
+        }
+      });
+
+      // output the fingerprint
+      // this.plugin("done", function(stats) {
+      //   let output = "ASSET_FINGERPRINT = \"" + stats.hash + "\""
+      //   fs.writeFileSync("config/initializers/fingerprint.rb", output, "utf8");
+      // });
+    }
   ]
 };

@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -8,7 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Project
   class Application < Rails::Application
-    config.autoload_paths += %W(#{Rails.root}/lib)
+    # config.middleware.use Rack::Static, :urls => ["/javascripts", "/stylesheets", "/images", "/assets"], :root => "public"
+
     config.active_record.raise_in_transactional_callbacks = true
     config.generators do |g|
       g.helper false
@@ -21,8 +22,8 @@ module Project
       g.stylesheets false
       g.test_framework false
     end
-
-    config.assets.paths << Rails.root.join('node_modules')
+    config.exceptions_app = self.routes
+    config.paths["app/views"].unshift("#{Rails.root}/app/templates")
 
     _host = ENV['HOST_DOMAIN'] || "localhost"
     _port = ENV['HOST_PORT']   || "3000"

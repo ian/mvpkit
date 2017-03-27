@@ -1,6 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  mount MVP::Engine => "/"
+  mount Sidekiq::Web       => '/sidekiq'
+  mount MVP::Engine        => "/"
 
   scope path: '/examples' do
     get      'mustache', to: 'examples#mustache', as: :mustache_example

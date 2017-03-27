@@ -1,0 +1,10 @@
+<% flash.each do |key, value| %>
+  <% next if ['__analytics_identify_events','__analytics_track_events'].include?(key) %>
+  <% klass = ['success','warning','danger','info'].include?(key) ? key : 'info' %>
+  <div class="fadeout alert alert-<%= klass %>">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= value %>
+  </div>
+<% end %>

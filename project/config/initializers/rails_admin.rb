@@ -1,11 +1,5 @@
 RailsAdmin.config do |config|
-  config.authorize_with do
-    if ENV["ADMIN_USER"] && ENV["ADMIN_PASSWORD"]
-      authenticate_or_request_with_http_basic('Site Message') do |username, password|
-        username == ENV["ADMIN_USER"] && password == ENV["ADMIN_PASSWORD"]
-      end
-    end
-  end
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -19,11 +13,23 @@ RailsAdmin.config do |config|
 
   ## == Pundit ==
   # config.authorize_with :pundit
+  config.authorize_with do
+    admin = begin
+              !!User.find(session[:user_id]).try(:is_admin)
+            rescue
+              false
+            end
+    redirect_to "/" unless admin
+  end
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+
+  ## == Gravatar integration ==
+  ## To disable Gravatar integration in Navigation Bar set to false
+  # config.show_gravatar true
 
   config.actions do
     dashboard                     # mandatory

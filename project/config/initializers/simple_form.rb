@@ -1,3 +1,5 @@
+# Setup SimpleForm for Bootstrap
+
 SimpleForm.setup do |config|
   config.label_text = lambda { |label, required, explicit_label| "#{label}" }
   config.error_notification_class = 'alert alert-danger'
