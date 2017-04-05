@@ -16,7 +16,8 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "mvpkit": "https://github.com/superlabs/mvpkit",
-    "selectize": "^0.12.4"
+    "selectize": "^0.12.4",
+    "webpack": "^2.3.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
