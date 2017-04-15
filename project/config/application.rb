@@ -8,9 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Project
   class Application < Rails::Application
-    # config.middleware.use Rack::Static, :urls => ["/javascripts", "/stylesheets", "/images", "/assets"], :root => "public"
-
+    config.active_record.primary_key = :uuid
     config.active_record.raise_in_transactional_callbacks = true
+
     config.generators do |g|
       g.helper false
       g.decorator false

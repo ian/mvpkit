@@ -8,3 +8,17 @@
     border-top: 0;
   }
 }
+
+.table.table-flush {
+  tr {
+    td, th {
+      &:first-child { padding-left: 0; }
+    }
+  }
+
+  tr {
+    td, th {
+      &:last-child { padding-right: 0; }
+    }
+  }
+}

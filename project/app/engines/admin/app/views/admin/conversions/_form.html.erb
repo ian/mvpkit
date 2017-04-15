@@ -1,0 +1,22 @@
+<%= form_for(conversion) do |f| %>
+  <% if conversion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(conversion.errors.count, "error") %> prohibited this conversion from being saved:</h2>
+
+      <ul>
+      <% conversion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -18,3 +18,4 @@ node_modules
 .byebug_history
 *.old
 npm-debug.log
+node_modules

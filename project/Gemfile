@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -11,6 +11,7 @@ gem "algoliasearch-rails"
 gem 'carrierwave', '0.11.2' # don't upgrade it'll break carrierwave-neo4j
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'devise'
 gem "dotenv-rails"
 gem 'identicon'
 gem 'jbuilder', '~> 2.5'
@@ -20,14 +21,16 @@ gem 'pg'
 gem 'postmark-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.1'
-gem 'rails_admin'
+gem 'ransack'
 gem 'redis'
 gem 'redis-namespace'
 gem 'sidekiq'
 gem 'simple_form'
-gem 'statistics2'
 gem 'stripe-rails', github: 'thefrontside/stripe-rails'
 gem 'workflow'
+
+# engines
+gem 'admin', path: './app/engines/admin'
 
 # assets
 gem 'font-awesome-sass'

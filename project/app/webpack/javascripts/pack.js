@@ -1,22 +1,25 @@
-// Courtesy of https://medium.com/@chrismnicola/leaving-sprockets-for-webpack-ccf7c6993ffa
-function requireAll(r) { r.keys().forEach(r); }
-function requireTree(path) { requireAll(require.context('./', true, /\.(js|coffee)$/)) }
+// https://webpack.github.io/docs/context.html#require-context
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
 
 window.$        = window.jQuery = require('jquery')
 window._        = require('lodash')
 window.is       = require('is')
 window.Mustache = require('mustache/mustache')
 
-require('mvpkit/assets/js/application')
+require('jquery')
+require('jquery-ujs')
+require('js-cookie')
 require('bootstrap/dist/js/bootstrap')
 require('selectize/dist/js/selectize')
 require('mustache')
 
-requireTree('lib')
-requireTree('behaviors')
-requireTree('controllers')
+requireAll(require.context("./lib", true, /\.js$/));
+requireAll(require.context("./behaviors", true, /\.js$/));
+requireAll(require.context("./controllers", true, /\.js$/));
 
-document.addEventListener("turbolinks:load", function(){
+$(function(){
   // $('*[data-toggle="popover"]').popover()
   // $('select').selectize()
   $('[data-toggle="tooltip"]').tooltip()
