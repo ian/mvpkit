@@ -1,22 +1,11 @@
-<%= form_for(conversion) do |f| %>
-  <% if conversion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(conversion.errors.count, "error") %> prohibited this conversion from being saved:</h2>
-
-      <ul>
-      <% conversion.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+<div class="card">
+  <div class="card-block">
+    <%= simple_form_for(conversion) do |f| %>
+      <%= f.input :email %>
+      <div class="actions">
+        <%= f.submit class: 'btn btn-primary' %>
+        <%= link_to 'Cancel', conversions_path, class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

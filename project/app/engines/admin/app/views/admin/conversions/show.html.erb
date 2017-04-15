@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="card mt20">
+  <div class="card-block">
+    <p>
+      <strong>Email:</strong>
+      <%= @conversion.email %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @conversion.email %>
-</p>
-
-<%= link_to 'Edit', edit_conversion_path(@conversion) %> |
-<%= link_to 'Back', conversions_path %>
+<div class="mt30">
+  <%= link_to 'Edit', edit_conversion_path(@conversion), class: 'btn btn-warning' %>
+  <%= link_to 'Back', conversions_path, class: 'btn btn-secondary' %>
+</div>
