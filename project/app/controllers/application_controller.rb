@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper MVP::Engine.helpers
 
   before_action :authenticate_with_http_basic if ENV['HTTP_BASIC_AUTH_USER']
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # Prevent CSRF attacks by raising an exception.
