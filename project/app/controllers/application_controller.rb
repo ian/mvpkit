@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
   if Rails.env.production?
     rescue_from StandardError do |exception|
       Rollbar.error(exception)
-      render 'errors/internal_server_error', status: 500
+      render 'static/internal_server_error', layout: false, status: 500
     end
 
-    rescue_from RecordNotFound, Neo4j::ActiveNode::Labels::RecordNotFound do |exception|
-      render 'errors/not_found', status: 404
+    rescue_from RecordNotFound, ActiveRecord::RecordNotFound do |exception|
+      render 'static/not_found', layout: false, status: 404
     end
   end
 
