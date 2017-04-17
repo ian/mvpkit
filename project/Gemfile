@@ -12,6 +12,7 @@ gem 'carrierwave', '0.11.2' # don't upgrade it'll break carrierwave-neo4j
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'devise'
+# gem 'devise_invitable' # uncomment if you want to make it so users are invitable
 gem "dotenv-rails"
 gem 'identicon'
 gem 'jbuilder', '~> 2.5'

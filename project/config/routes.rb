@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  devise_for :users
   mount Sidekiq::Web       => '/sidekiq'
   mount MVP::Engine        => "/"
   mount Admin::Engine      => '/houston' # avoid /admin, lots of script kiddies target this
