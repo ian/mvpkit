@@ -17,7 +17,7 @@ gem "dotenv-rails"
 gem 'identicon'
 gem 'jbuilder', '~> 2.5'
 gem 'mustache'
-gem 'mvpkit', '~> 1.0.0'#, path: '../../mvpkit'
+gem 'mvpkit', '~> 1.1.1'#, path: '../../mvpkit'
 gem 'pg'
 gem 'postmark-rails'
 gem 'puma', '~> 3.0'
