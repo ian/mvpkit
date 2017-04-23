@@ -6,7 +6,8 @@ module Admin
 
     # GET /users
     def index
-      @users = User.all
+      @q = User.ransack(params[:q])
+      @users = @q.result(distinct: true)
     end
 
     # GET /users/1
