@@ -262,7 +262,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rollbar (2.14.0)
+    rollbar (2.14.1)
       multi_json
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -326,4 +326,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.6
