@@ -50,6 +50,7 @@ gem 'sass-rails'
 gem 'sprockets'#, github: 'rails/sprockets' # edge includes format_source_map bug fix
 gem 'turbolinks', '~> 5'
 gem 'uglifier'
+gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

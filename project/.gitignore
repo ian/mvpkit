@@ -47,3 +47,5 @@ bower.json
 # NPM stuff
 npm-debug.log
 node_modules
+/public/packs
+/node_modules
