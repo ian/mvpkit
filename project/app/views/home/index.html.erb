@@ -1,5 +1,5 @@
-<div class="row mt100">
-  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+<div class="row mt100 justify-content-center">
+  <div class="col-md-8 col-lg-6">
     <p class='text-center mb50'>
       By default, this page is setup to accept an email submission and store in the database.  Depending on your configuration, this will fire an conversion event and even submit to Slack.
     </p>
@@ -7,7 +7,7 @@
       <div class="card-header">
         <h4>Sign Up</h4>
       </div>
-      <div class="card-block">
+      <div class="card-body">
         <%= simple_form_for Conversion.new, url: conversion_path, remote:true, validate: true, html: { class: 'disable-on-submit' } do |f| %>
           <div class="row">
             <div class="col-sm-7 pr10-sm">
