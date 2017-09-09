@@ -13,6 +13,10 @@ var ReactRailsUJS = require("react_ujs")
 ReactRailsUJS.useContext(componentRequireContext)
 
 window.Tether          = require('tether');
+window.Popper = require('popper.js').default
+window.jQuery          = require('jquery')
+window.jQueryUJS       = require('jquery-ujs');
+window.$               = window.jQuery;
 
 window.is              = require('is_js');
 window._               = require('lodash');
