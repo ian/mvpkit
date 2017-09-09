@@ -6,10 +6,9 @@ class ConversionsController < ApplicationController
 
     respond_to do |format|
       if @conversion.save
-        sign_in(@conversion)
         track! 'Conversion', {email: @conversion.email}
         slack! "Conversion: #{@conversion.email}"
-        format.json { render json: @conversion, status: :ok }
+        format.json { render :show }
       else
         format.json { render json: @conversion.errors, status: :unprocessable_entity }
       end

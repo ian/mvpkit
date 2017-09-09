@@ -3,26 +3,7 @@
     <p class='text-center mb50'>
       By default, this page is setup to accept an email submission and store in the database.  Depending on your configuration, this will fire an conversion event and even submit to Slack.
     </p>
-    <div class="card">
-      <div class="card-header">
-        <h4>Sign Up</h4>
-      </div>
-      <div class="card-body">
-        <%= simple_form_for Conversion.new, url: conversion_path, remote:true, validate: true, html: { class: 'disable-on-submit' } do |f| %>
-          <div class="row">
-            <div class="col-sm-7 pr10-sm">
-              <%= f.input :email, placeholder: 'joe@example.com', label: false, input_html: { class: "mb0" } %>
-            </div>
-            <div class="col-sm-5 pl0-sm">
-              <%= f.submit "Register for Free", class: 'btn btn-primary btn-block' %>
-            </div>
-          </div>
 
-          <p class="text-center mt10 mb0 text-grey">
-            <small>We hate spam, don't worry, we'll never try to sell you anything or your info to anyone.</small>
-          </p>
-        <% end %>
-      </div>
-    </div>
+    <%= react_component 'Conversion' %>
   </div>
 </div>

@@ -24,3 +24,5 @@ _.mixin(require('lodash-inflection'));
 
 window.Moment          = require('moment');
 window.bs              = require('bootstrap');
+
+window.Conversion      = require('components/conversion');
