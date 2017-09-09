@@ -8,12 +8,18 @@ git_source(:github) do |repo_name|
 end
 
 gem "algoliasearch-rails"
-gem 'carrierwave', '0.11.2' # don't upgrade it'll break carrierwave-neo4j
+gem 'carrierwave'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem "cloudinary"
 gem 'devise'
 # gem 'devise_invitable' # uncomment if you want to make it so users are invitable
 gem "dotenv-rails"
+gem 'faraday'
+gem 'fog'
+gem 'fog-aws'
+gem "geocoder"
+gem "hashie"
 gem 'identicon'
 gem 'jbuilder', '~> 2.5'
 gem 'mustache'
@@ -21,25 +27,27 @@ gem 'mvpkit', '~> 1.1.1'#, path: '../../mvpkit'
 gem 'pg'
 gem 'postmark-rails'
 gem 'puma', '~> 3.0'
+gem "rack-canonical-host"
+gem 'rack-ssl-enforcer'
 gem 'rails', '~> 5.0.1'
 gem 'ransack'
 gem 'redis'
 gem 'redis-namespace'
+gem 'rollbar'
 gem 'sidekiq'
 gem 'simple_form'
-gem 'stripe-rails', github: 'thefrontside/stripe-rails'
+gem 'sitemap_generator'
+gem 'slack-notifier'
+gem 'stripe-rails'
 gem 'workflow'
 
 # engines
 gem 'admin', path: './app/engines/admin'
 
 # assets
-gem 'font-awesome-sass'
-gem 'jquery-turbolinks'
-gem 'sprockets', github: 'rails/sprockets' # edge includes format_source_map bug fix
-# # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer'
-# # gem 'therubyracer', platforms: :ruby
+gem 'react-rails'
+gem 'sass-rails'
+gem 'sprockets'#, github: 'rails/sprockets' # edge includes format_source_map bug fix
 gem 'turbolinks', '~> 5'
 gem 'uglifier'
 
@@ -50,12 +58,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "bullet"
   gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console'
 end
