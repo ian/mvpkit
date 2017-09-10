@@ -21,13 +21,13 @@ foreman start
 
 # Introduction
 
-mvpkit is a tool for quickly building prototypes and rapid ideation.  If you are looking for a landing page tool, [there](http://leadpages.net) [are](https://wix.com) [plenty](https://instapage.com) [of](https://unbounce.com) [them](https://hubspot.com) [out](https://landingfolio.com) [there](https://landerapp.com).
+mvpkit is a tool for quickly building prototypes and rapid ideation.  This stack is built entirely for speed of development.
 
-It combines two of the fastest (and not necessarily long term) technologies to test your ideas and (in)validate them quickly.
+If you are looking for a landing page tool, [there](http://leadpages.net) [are](https://wix.com) [plenty](https://instapage.com) [of](https://unbounce.com) [them](https://hubspot.com) [out](https://landingfolio.com) [there](https://landerapp.com).
 
-This stack is built entirely for speed of development.
+It combines two fast (and not necessarily long term) web technologies to test your ideas and (in)validate them quickly.
 
-## Heroku
+# Heroku
 
 To setup deployment for heroku, first create the project:
 
@@ -35,37 +35,54 @@ To setup deployment for heroku, first create the project:
 heroku create PROJECT
 ```
 
-You're probably going to want Database backups.  This will let you use `rake db:import`
+Then setup the stack:
 
 ```
-heroku pg:backups capture
-```
-
-You're also going to need to setup the buildpacks
-
-```
+heroku addons:create heroku-postgresql
 heroku buildpacks:set heroku/ruby
 heroku buildpacks:add --index 1 heroku/nodejs
 ```
 
-Make sure to turn off npm cacheing (since we're loading MVP from a repo)
+And deploy:
 
 ```
-heroku config:set NODE_MODULES_CACHE=false
+git push heroku master
 ```
 
-Add a scheduled task to update your sitemaps:
+# Extras
+
+## Google Sitemaps
+
+If SEO matters to you, you'll want to turn on google sitemap generation.
+
+#### Setup
+
+Edit `config/sitemap.rb` with your own custom routes.
+
+#### Updating
+
+Run `rake sitemap:refresh` in production to update Bing/Google with changes to the sitemap.
+
+#### Scheduling
+
+Put this in a `cron` task or in Heroku Scheduler.
+
+```
+rake sitemap:worker
+```
+
+If you're on heroku:
 
 ```
 heroku addons:create scheduler:standard
 heroku addons:open scheduler
 ```
 
-Add the following task: `rake sitemap:worker`.  Your choice on the frequency but I usually use `daily`
+And add the following task: `rake sitemap:worker`.  Your choice on the frequency but I usually use `daily`
 
-# SEO
+## SEO
 
-## Meta Properties
+### Meta Properties
 
 All meta fields are controlled via the `page` object.  Set attributes on this in order to get meta properties populated.  This is best done at the controller level.
 
@@ -82,18 +99,6 @@ All meta fields are controlled via the `page` object.  Set attributes on this in
 |`page.og_description`|   |`page.description`|
 |`page.og_image`|   |   |
 |`page.twitter_card`|   |   |   |
-
-## Sitemaps
-
-### Setup
-
-Edit `config/sitemap.rb` with your own custom routes.
-
-### Updating
-
-Run `sitemap:refresh` in production to update Bing/Google with changes to the sitemap.
-
-Put this in a `cron` task or in Heroku Scheduler.
 
 # Helpers
 
