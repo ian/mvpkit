@@ -1,41 +1,31 @@
-# Installation
+# Quickstart
 
 Install the mvp gem:
 
 ```
-gem install minimum_viable_product
+gem install mvpkit
 ```
 
-Then setup your project:
+Set up a new project
 
 ```
 mvp new PROJECT
 ```
 
-# Setup
-
-## `.env`
-
-Set your `.env` file up with your own variables
+Start the server (make sure you have [foreman](https://github.com/ddollar/foreman) installed)
 
 ```
-ROLLBAR_CLIENT_ACCESS_TOKEN=
-ROLLBAR_SERVER_ACCESS_TOKEN=
-SEGMENT_WRITE_KEY=
-SLACK_WEBHOOK_URL=
-SLACK_POST_USERNAME=
-FACEBOOK_TRACKING_ID=
-AMPLITUDE_API_KEY=
-HOST_DOMAIN=localhost
-HOST_PORT=3000
-HOST_PROTOCOL=http
-GOOGLE_ANALYTICS_ID=
-HOTJAR_ID=
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_S3_BUCKET=
-SPOOF_IP=true
+cd PROJECT
+foreman start
 ```
+
+# Introduction
+
+mvpkit is a tool for quickly building prototypes and rapid ideation.  If you are looking for a landing page tool, [there](http://leadpages.net) [are](https://wix.com) [plenty](https://instapage.com) [of](https://unbounce.com) [them](https://hubspot.com) [out](https://landingfolio.com) [there](https://landerapp.com).
+
+It combines two of the fastest (and not necessarily long term) technologies to test your ideas and (in)validate them quickly.
+
+This stack is built entirely for speed of development.
 
 ## Heroku
 
