@@ -1,9 +1,14 @@
 <div class="row mt100 justify-content-center">
   <div class="col-md-8 col-lg-6">
-    <h1 class="text-center mb10">mvpkit is running</h1>
-    <p class='text-center mb50'>
-      By default, this page is setup to accept an email submission and store in the database.  Depending on your configuration, this will fire an conversion event and even submit to Slack.
-    </p>
+    <div>
+      <h1 class="text-center mb10">mvpkit is running</h1>
+      <p class='text-center'>
+        Hopefully that was easy.  Now, onto the good stuff.
+      </p>
+      <hr class="mt50 mb50"/>
+    </div>
+
+    <p class="mb15">Here's a sample React conversion form.  It takes an email as an input, validates and submits to the server to create a conversion, which will show up in <a href="/a/conversions">conversions admin</a></p>
 
     <%= react_component 'Conversion' %>
   </div>

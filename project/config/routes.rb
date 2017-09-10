@@ -3,7 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :users
   mount Sidekiq::Web       => '/sidekiq'
-  mount Admin::Engine      => '/houston' # avoid /admin, lots of script kiddies target this
+  mount Admin::Engine      => '/a' # avoid /admin, lots of script kiddies target this
 
   get      'conversion', to: 'home#conversion', as: :conversion
   resource :conversion, only: [:create]

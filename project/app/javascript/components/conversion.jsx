@@ -49,7 +49,7 @@ class Conversion extends React.Component {
       return(
         <div className="card">
           <div className="card-body text-center">
-            <h4>Thanks, we'll be in touch!</h4>
+            <h4>Conversion Successful!</h4>
           </div>
         </div>
       )
