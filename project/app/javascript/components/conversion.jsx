@@ -57,7 +57,7 @@ class Conversion extends React.Component {
     return (
       <div className="card">
         <div className="card-header">
-          <h4>Sign Up</h4>
+          <h4 className="card-title">Conversion Form</h4>
         </div>
         <div className="card-body">
           <Form onSubmit={(e)=>{e.preventDefault()}}>

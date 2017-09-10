@@ -1,19 +1,10 @@
-@import 'config/variables';
+@import "init/variables";
+
 @import 'font-awesome/scss/font-awesome';
-@import 'bootstrap/scss/bootstrap';
+@import "init/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
-@import 'init/reset';
+@import "init/reset";
 
-@import 'skin/alerts';
-@import 'skin/buttons';
-@import 'skin/hero';
-@import 'skin/images';
-@import 'skin/progress';
-@import 'skin/selectize';
-@import 'skin/spacing';
-@import 'skin/tables';
-@import 'skin/treatments';
-@import 'skin/turbolinks';
-@import 'skin/typography';
-
-@import 'layout/main';
+@import "elements/*";
+@import "treatments/*";

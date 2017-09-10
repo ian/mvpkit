@@ -1,0 +1,73 @@
+.form-group {
+  margin-bottom: 0;
+  position: relative;
+}
+
+.form-control {
+  padding: 8px 10px 5px 10px;
+  box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
+
+  &:focus {
+    border-color: $color-green;
+    box-shadow: none !important;
+  }
+
+  // text areas are diff color for some reason
+  &textarea {
+    color: $color-grey-dark;
+    &:focus {
+      color: $color-grey-dark;
+    }
+  }
+
+  &.has-error {
+    border: 1px solid $color-red !important;
+    color:  $color-red !important;
+    background-color: #ffebeb;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.form-dropzone {
+  @extend .btn-secondary;
+  padding: 10px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-grey-lightest;
+  }
+}
+
+.custom-control {
+  padding-left: 25px;
+  top: -5px;
+  .custom-control-indicator {
+    width: 1.25rem;
+    height: 1.25rem;
+    top: 0;
+  }
+}
+
+.has-feedback {
+  .form-control-feedback-left {
+    position: absolute;
+    line-height: 24px;
+    left: 10px;
+  }
+
+  .form-control-feedback-right {
+    position: absolute;
+    line-height: 24px;
+    right: 10px;
+  }
+}
+
+input[type=radio], input[type=checkbox] {
+  transform: scale(1.25);
+  margin: 0;
+  background-color: #990000;
+  border-color: #990000;
+}

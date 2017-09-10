@@ -1,0 +1,24 @@
+.interstitial {
+  @include media-breakpoint-up(xs) {
+    margin: 20px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 65%;
+    margin: auto;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 50%;
+  }
+}

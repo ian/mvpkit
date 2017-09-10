@@ -1,1 +1,0 @@
-const Selectize = require('selectize')

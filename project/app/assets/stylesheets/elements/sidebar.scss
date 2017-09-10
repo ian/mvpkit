@@ -1,0 +1,30 @@
+.list-group.sidebar {
+  position: sticky;
+  top: 1em;
+  z-index: 1030;
+
+  .list-group-item {
+    color: $color-grey-dark;
+    border: none;
+    background: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    span {
+      position: relative;
+      top: 3px;
+    }
+
+    &.active {
+      color: $color-green;
+      border: $card-border-width solid $card-border-color;
+      background: #FFF;
+      @include border-radius($card-border-radius);
+      @extend .shadowed;
+    }
+
+    .badge {
+      background-color: $color-green;
+    }
+  }
+}

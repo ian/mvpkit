@@ -1,0 +1,68 @@
+@import 'init/variables';
+
+.card {
+  border-radius: $border-radius;
+  background-color: #ffffff;
+	box-shadow: 0 1px 7px 0 rgba(180, 189, 195, 0.27);
+	border: 1px solid $color-grey-light;
+
+  .card-title {
+    margin-bottom: 0;
+  }
+
+  &.card-hover {
+    &:hover {
+      cursor: pointer;
+      background-color: $color-grey-lightest;
+    }
+  }
+
+  .card-block {
+    padding: 20px;
+  }
+
+  &.card-success {
+    box-shadow: 0 1px 7px 0 rgba($color-green, 0.27);
+  	border: 1px solid $color-green;
+    background-color: $color-success-highlight;
+
+    a {
+      color: $color-green;
+      font-weight: bold;
+    }
+
+    &.card-hover:hover {
+      background-color: $color-success-highlight-hover;
+    }
+  }
+
+  &.card-warning {
+    box-shadow: 0 1px 7px 0 rgba($color-red, 0.27);
+  	border: 1px solid $color-yellow;
+    background-color: lighten($color-yellow, 40%);
+
+    a {
+      color: $color-yellow;
+      font-weight: bold;
+    }
+
+    &.card-hover:hover {
+      background-color: lighten($color-yellow, 42%);
+    }
+  }
+
+  &.card-danger {
+    box-shadow: 0 1px 7px 0 rgba($color-red, 0.27);
+  	border: 1px solid $color-red;
+    background-color: #ffebeb;;
+
+    a {
+      color: $color-red;
+      font-weight: bold;
+    }
+
+    &.card-hover:hover {
+      background-color: lighten(#ffebeb, 2%);
+    }
+  }
+}

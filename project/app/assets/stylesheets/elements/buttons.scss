@@ -1,0 +1,114 @@
+@import 'init/variables';
+
+.btn {
+  // border: 0;
+  box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
+  font-family: 'Adelle-Sans-Bold', sans-serif;
+  padding: 8px 15px 5px 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-lg {
+    padding: 9px 15px 5px 15px
+  }
+
+  &.btn-sm {
+    padding: 5px 5px 3px 5px
+  }
+
+  &.btn-wite {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &.btn-primary, &.btn-success {
+    border: solid 1px #2ab27b;
+    background-color: #2ab27b;
+    color: #FFF;
+  }
+
+  &.btn-secondary {
+    border: solid 1px $color-grey-light;
+    color: $color-grey-dark;
+
+    .fa {
+      color: $color-grey;
+    }
+
+    &:hover {
+      background-color: $color-grey-lightest;
+    }
+
+    &:focus,
+    &:active {
+     outline: none !important;
+     box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
+    }
+
+    &.selected {
+      color: $color-grey-lightest;
+      background-color: $color-grey;
+    }
+  }
+
+  &.has-error {
+    border: 1px solid $color-red !important;
+    color:  $color-red !important;
+    background-color: #ffebeb !important;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($color-red, 0.5) !important;
+    }
+
+    .fa {
+      color: $color-red !important;
+    }
+  }
+
+  @each $name, $val in $colors {
+    &.btn-#{"" + $name} {
+      @include button-variant(#FFF, $val, $color-grey-light);
+      .fa { color: #fff; }
+    }
+
+    &.btn-outline-#{"" + $name} {
+      @include button-outline-variant($val);
+      border: 1px solid $val;
+    }
+
+    &:active,
+    &.active {
+      &.btn-active-#{"" + $name} {
+        color: #fff;
+        background-color: $val;
+        background-image: none;
+        // border-color: $active-border;
+        // @include box-shadow($btn-active-box-shadow);
+
+        .fa { color: #fff; }
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      &.btn-block-#{$breakpoint}-up { width: 100%; display: block }
+    }
+
+    @include media-breakpoint-down($breakpoint) {
+      &.btn-block-#{$breakpoint}-down { width: 100%; display: block }
+    }
+  }
+}
+
+.btn-group {
+  .btn {
+    padding: 8px 10px 5px 10px;
+  }
+}

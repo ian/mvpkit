@@ -1,0 +1,38 @@
+.timeline {
+  .timeline-activity {
+    @extend .card;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
+
+    .actions {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    .status {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    .icon {
+      position: absolute;
+      left: 20px;
+
+      .fa.fa-stack-1x {
+        font-size: 1.0rem;
+      }
+    }
+
+    .body {
+      margin-left: 45px;
+      padding-top: 10px;
+    }
+  }
+}

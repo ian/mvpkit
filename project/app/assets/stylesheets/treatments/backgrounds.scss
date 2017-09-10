@@ -1,0 +1,23 @@
+body {
+  background-color: #F7F9F9;
+}
+
+.bg-white {
+  background-color: #FFF !important;
+}
+
+@each $name, $val in $colors {
+  .bg-#{"" + $name} {
+    background-color: $val !important;
+  }
+}
+
+@each $name, $val in $grey-colors {
+  .bg-#{"" + $name} {
+    background-color: $val !important;
+  }
+}
+
+.shadowed {
+  box-shadow: 0 1px 7px 0 rgba(180, 189, 195, 0.27);
+}

@@ -1,0 +1,16 @@
+.badge {
+  padding: 0.5em 0.6em 0.25em 0.6em;
+
+  &.badge-outline-success {
+    color: $brand-success;
+    border: 1px solid $brand-success;
+  }
+  &.badge-outline-warning {
+    color: $brand-warning;
+    border: 1px solid $brand-warning;
+  }
+  &.badge-outline-danger {
+    color: $brand-danger;
+    border: 1px solid $brand-danger;
+  }
+}

@@ -1,0 +1,40 @@
+// Courtesy of https://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project
+// #45 - Gravual
+
+$color-blue:            #A2D7D8;
+$color-green:           #BFE1BF;
+$color-yellow:          #FCD059;
+$color-red:             #DE5842;
+
+$color-black:           #000;
+$color-grey-lightest:   #EDEDEA;
+$color-grey-light:      darken($color-grey-lightest, 5%);
+$color-grey:            darken($color-grey-lightest, 30%);
+$color-grey-dark:       darken($color-grey-lightest, 45%);
+$color-grey-darkest:    darken($color-grey-lightest, 60%);
+
+$color-success-highlight:       lighten($color-green, 57%);
+$color-success-highlight-hover: lighten($color-green, 55%);
+
+$colors:                (
+  green:                $color-green,
+  red:                  $color-red,
+  blue:                 $color-blue,
+  yellow:               $color-yellow,
+);
+
+$grey-colors:           (
+  black:                $color-black,
+  grey-darkest:         $color-grey-darkest,
+  grey-dark:            $color-grey-dark,
+  grey:                 $color-grey,
+  grey-light:           $color-grey-light,
+  grey-lightest:        $color-grey-lightest
+);
+
+$gray-base:             $color-grey !default;
+$gray-darker:           $color-grey-darkest !default; // #222
+$gray-dark:             $color-grey-dark !default;   // #333
+$gray:                  $color-grey !default; // #555
+$gray-light:            $color-grey-light !default; // #777
+$gray-lighter:          $color-grey-lightest !default; // #eee

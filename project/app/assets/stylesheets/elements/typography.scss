@@ -1,0 +1,80 @@
+html,
+p,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Adelle-Sans', sans-serif;
+  font-size: 14px;
+	letter-spacing: 0.2px;
+  color: $color-black;
+}
+
+strong {
+  font-family: 'Adelle-Sans-Bold', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $color-black;
+  margin:0;
+}
+
+h1 {
+  font-size: 30px;
+	line-height: 1.6;
+  font-family: 'Adelle-Sans-Bold', sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 26px;
+	line-height: 1.4;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+	font-weight: bold;
+}
+
+@each $name, $val in $colors {
+  .text-#{"" + $name} {
+    color: $val !important;
+  }
+}
+
+@each $name, $val in $grey-colors {
+  .text-#{"" + $name} {
+    color: $val !important;
+  }
+}
+
+.font-weight-bold {
+  font-family: 'Adelle-Sans-Bold', sans-serif;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .text-left-#{$breakpoint}-up  { text-align: left; }
+    .text-right-#{$breakpoint}-up { text-align: right; }
+    .text-center-#{$breakpoint}-up { text-align: center; }
+  }
+
+  @include media-breakpoint-down($breakpoint) {
+    .text-left-#{$breakpoint}-down  { text-align: left; }
+    .text-right-#{$breakpoint}-down { text-align: right; }
+    .text-center-#{$breakpoint}-down { text-align: center; }
+  }
+}

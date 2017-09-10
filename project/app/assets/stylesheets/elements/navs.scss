@@ -1,0 +1,15 @@
+nav {
+  .navbar-brand {
+    margin: 0;
+  }
+  
+  .nav-link {
+    position: relative;
+    top: 2px;
+    color: $color-grey;
+
+    &:hover {
+      color: $color-grey-dark;
+    }
+  }
+}
