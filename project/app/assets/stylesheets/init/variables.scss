@@ -7,11 +7,11 @@ $color-yellow:          #FCD059;
 $color-red:             #DE5842;
 
 $color-black:           #000;
-$color-grey-lightest:   #EDEDEA;
-$color-grey-light:      darken($color-grey-lightest, 5%);
-$color-grey:            darken($color-grey-lightest, 30%);
-$color-grey-dark:       darken($color-grey-lightest, 45%);
-$color-grey-darkest:    darken($color-grey-lightest, 60%);
+$color-grey:            #EDEDEA;
+$color-grey-lightest:   lighten($color-grey, 30%);
+$color-grey-light:      lighten($color-grey, 5%);
+$color-grey-dark:       darken($color-grey, 45%);
+$color-grey-darkest:    darken($color-grey, 60%);
 
 $color-success-highlight:       lighten($color-green, 57%);
 $color-success-highlight-hover: lighten($color-green, 55%);

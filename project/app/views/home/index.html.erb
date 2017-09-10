@@ -1,11 +1,23 @@
 <div class="row mt100 justify-content-center">
-  <div class="col-md-8 col-lg-6">
+  <div class="col-lg-8">
     <div>
       <h1 class="text-center mb10">mvpkit is running</h1>
       <p class='text-center'>
         Hopefully that was easy.  Now, onto the good stuff.
       </p>
       <hr class="mt50 mb50"/>
+    </div>
+
+    <div class="mb50">
+      <p class="mb20">You've got <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">Bootstrap 4</a> ready to go.</p>
+
+      <div class="row">
+        <% ['primary','secondary','success','warning','danger'].each do |color| %>
+          <div class="col-sm-4 mb20">
+            <a href="#" class="btn btn-<%= color %> btn-block">.btn-<%= color %></a>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <p class="mb15">Here's a sample React conversion form.  It takes an email as an input, validates and submits to the server to create a conversion, which will show up in <a href="/a/conversions">conversions admin</a></p>

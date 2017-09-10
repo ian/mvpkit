@@ -56,10 +56,8 @@ class Conversion extends React.Component {
     }
     return (
       <div className="card">
-        <div className="card-header">
-          <h4 className="card-title">Conversion Form</h4>
-        </div>
         <div className="card-body">
+          <h4 className="mb10">Conversion Form</h4>
           <Form onSubmit={(e)=>{e.preventDefault()}}>
             <Input onChange={this.onEmailChange} placeholder="Enter your email ..."/>
             <div className="mt15">

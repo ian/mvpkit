@@ -6,9 +6,11 @@
 .form-control {
   padding: 8px 10px 5px 10px;
   box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
+  border-color: $color-grey;
+  border-radius: $border-radius;
 
   &:focus {
-    border-color: $color-green;
+    border-color: $color-blue;
     box-shadow: none !important;
   }
 
@@ -27,17 +29,6 @@
     &:focus {
       box-shadow: none;
     }
-  }
-}
-
-.form-dropzone {
-  @extend .btn-secondary;
-  padding: 10px;
-  text-align: center;
-
-  &:hover {
-    cursor: pointer;
-    background-color: $color-grey-lightest;
   }
 }
 

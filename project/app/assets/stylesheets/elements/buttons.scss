@@ -1,9 +1,7 @@
 @import 'init/variables';
 
 .btn {
-  // border: 0;
   box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
-  font-family: 'Adelle-Sans-Bold', sans-serif;
   padding: 8px 15px 5px 15px;
 
   &:hover {
@@ -23,22 +21,17 @@
     padding-right: 30px;
   }
 
-  &.btn-primary, &.btn-success {
-    border: solid 1px #2ab27b;
-    background-color: #2ab27b;
-    color: #FFF;
-  }
-
   &.btn-secondary {
-    border: solid 1px $color-grey-light;
+    border: solid 1px $color-grey;
     color: $color-grey-dark;
+    background-color: $color-grey-lightest;
 
     .fa {
       color: $color-grey;
     }
 
     &:hover {
-      background-color: $color-grey-lightest;
+      background-color: darken($color-grey-lightest, 5%);
     }
 
     &:focus,
