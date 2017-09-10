@@ -44,10 +44,10 @@ when 'new'
   run "cd #{slug}; bin/setup", "\n== Project Setup"
 
 when 'update'
-  run "bundle update minimum_viable_product"
+  run "bundle update mvpkit"
   # npm has a bug where it won't update new dependencies
   # https://github.com/npm/npm/issues/1341
-  run "rm -rf node_modules; npm install"
+  # run "rm -rf node_modules; yarn"
 when '-v','version'
   version = File.read(File.dirname(__FILE__) + '/../VERSION')
   puts "Version #{version}"
