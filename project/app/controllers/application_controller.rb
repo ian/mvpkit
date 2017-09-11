@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper MVP::Engine.helpers
 
-  before_action :authenticate_with_http_basic if ENV['HTTP_BASIC_AUTH_USER']
+  before_action :http_basic_auth if ENV['HTTP_BASIC_AUTH_USER']
   # before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authenticate_with_http_basic
+  def http_basic_auth
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV['HTTP_BASIC_AUTH_USER'] && password == ENV['HTTP_BASIC_AUTH_PASSWORD']
     end

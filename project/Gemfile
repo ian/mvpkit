@@ -22,6 +22,7 @@ gem "geocoder"
 gem "hashie"
 gem 'identicon'
 gem 'jbuilder', '~> 2.5'
+gem 'kaminari'
 gem 'mustache'
 gem 'mvpkit', '~> 1.1.1'#, path: '../../mvpkit'
 gem 'pg'
