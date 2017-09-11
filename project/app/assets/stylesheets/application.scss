@@ -1,11 +1,9 @@
 @import "init/variables";
 
 // Fonts
-@import 'font-awesome/scss/font-awesome';
 @import "init/open-iconic";
+@import "init/font-awesome";
 @import "init/bootstrap";
-@import "bootstrap/scss/bootstrap";
-
 @import "init/reset";
 
 @import "elements/*";

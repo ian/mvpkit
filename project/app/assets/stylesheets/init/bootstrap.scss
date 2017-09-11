@@ -51,3 +51,5 @@ $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !
 
 $table-cell-padding: 15px 10px 10px 10px;
 $table-sm-cell-padding: 0;
+
+@import "bootstrap/scss/bootstrap";
