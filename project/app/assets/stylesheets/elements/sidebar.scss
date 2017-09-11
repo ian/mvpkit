@@ -18,7 +18,7 @@
     &.active {
       color: $color-green;
       border: $card-border-width solid $card-border-color;
-      background: #FFF;
+      background: $color-white;
       @include border-radius($card-border-radius);
       @extend .shadowed;
     }

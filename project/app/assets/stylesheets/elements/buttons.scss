@@ -1,48 +1,24 @@
 @import 'init/variables';
 
+.btn-group {
+  .btn {
+    padding: 16px;
+  }
+}
+
 .btn {
-  box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
-  padding: 8px 15px 5px 15px;
+  padding: 16px 32px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
 
   &:hover {
     cursor: pointer;
   }
 
-  &.btn-lg {
-    padding: 9px 15px 5px 15px
-  }
-
-  &.btn-sm {
-    padding: 5px 5px 3px 5px
-  }
-
-  &.btn-wite {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  &.btn-secondary {
-    border: solid 1px $color-grey;
-    color: $color-grey-dark;
-    background-color: $color-grey-lightest;
-
-    .fa {
-      color: $color-grey;
-    }
-
+  &.btn-outline-light {
     &:hover {
-      background-color: darken($color-grey-lightest, 5%);
-    }
-
-    &:focus,
-    &:active {
-     outline: none !important;
-     box-shadow: 0 1px 2px 0 rgba(106, 116, 135, 0.1);
-    }
-
-    &.selected {
-      color: $color-grey-lightest;
-      background-color: $color-grey;
+      color: $color-black;
     }
   }
 
@@ -62,8 +38,9 @@
 
   @each $name, $val in $colors {
     &.btn-#{"" + $name} {
-      @include button-variant(#FFF, $val, $color-grey-light);
-      .fa { color: #fff; }
+      color: $color-white !important;
+      @include button-variant($val, $val);
+      .fa { color: $color-white; }
     }
 
     &.btn-outline-#{"" + $name} {
@@ -97,11 +74,5 @@
     @include media-breakpoint-down($breakpoint) {
       &.btn-block-#{$breakpoint}-down { width: 100%; display: block }
     }
-  }
-}
-
-.btn-group {
-  .btn {
-    padding: 8px 10px 5px 10px;
   }
 }

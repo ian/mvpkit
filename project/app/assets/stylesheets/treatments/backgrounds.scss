@@ -1,9 +1,9 @@
 body {
-  background-color: #FFF;
+  background-color: $color-white;
 }
 
 .bg-white {
-  background-color: #FFF !important;
+  background-color: $color-white !important;
 }
 
 @each $name, $val in $colors {
