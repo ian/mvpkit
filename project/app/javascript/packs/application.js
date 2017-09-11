@@ -12,17 +12,18 @@ var componentRequireContext = require.context("components", true)
 var ReactRailsUJS = require("react_ujs")
 ReactRailsUJS.useContext(componentRequireContext)
 
-window.Tether          = require('tether');
-window.Popper = require('popper.js').default
-window.jQuery          = require('jquery')
-window.jQueryUJS       = require('jquery-ujs');
-window.$               = window.jQuery;
+window.Tether             = require('tether');
+window.Popper             = require('popper.js').default
+window.jQuery             = require('jquery')
+window.jQueryUJS          = require('jquery-ujs');
+window.$                  = window.jQuery;
 
-window.is              = require('is_js');
-window._               = require('lodash');
+window.is                 = require('is_js');
+window._                  = require('lodash');
 _.mixin(require('lodash-inflection'));
 
-window.Moment          = require('moment');
-window.bs              = require('bootstrap');
+window.Moment             = require('moment');
+window.bs                 = require('bootstrap');
 
-window.Conversion      = require('components/conversion');
+window.ReactstrapExamples = require('components/examples/reactstrap');
+window.Conversion         = require('components/conversion');
