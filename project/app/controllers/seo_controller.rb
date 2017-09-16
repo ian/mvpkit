@@ -4,7 +4,7 @@ module MinimumViableProduct
       render text: %%
   User-agent: *
   Disallow:
-  Sitemap: #{MVP::Engine.routes.url_helpers.sitemap_url}
+  Sitemap: #{sitemap_url(host: current_domain.host)}
       %, content_type: "text/plain"
     end
   end
